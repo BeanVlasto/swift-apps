@@ -8,5 +8,20 @@
 
 import Foundation
 
-print("Hello, World!")
+print("What would you like to call your Tamagotchi? ")
+var name = ""
+if let input = readLine() {
+    name = input
+}
 
+let tamagotchi = Tamagotchi(name: name)
+
+print("""
+\(tamagotchi.getName) says hello!
+What would you like to do with your tamagotchi?
+    1) Ask how old it is
+    2) Weigh it
+    3) Feed
+    4) Put to bed
+    5) Clean
+""")

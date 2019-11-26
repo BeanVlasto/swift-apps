@@ -10,6 +10,7 @@
 		9FC37459238D34040068B71A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC37458238D34040068B71A /* main.swift */; };
 		9FC37460238D345B0068B71A /* Tamagotchi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC3745F238D345B0068B71A /* Tamagotchi.swift */; };
 		9FC37468238D34870068B71A /* TamagotchiTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC37467238D34870068B71A /* TamagotchiTest.swift */; };
+		9FC3746E238D35A20068B71A /* Tamagotchi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC3745F238D345B0068B71A /* Tamagotchi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -185,6 +186,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FC3746E238D35A20068B71A /* Tamagotchi.swift in Sources */,
 				9FC37468238D34870068B71A /* TamagotchiTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

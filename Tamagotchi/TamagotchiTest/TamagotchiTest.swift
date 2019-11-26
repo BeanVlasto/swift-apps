@@ -12,11 +12,10 @@ class TamagotchiTest: XCTestCase {
     
     let tamagotchi = Tamagotchi()
 
-    func testCreationOfTamagotchiReturnsCorrectDefaultValues() {
+    func testGetAgeReturnsCorrectAge() {
         
-        //arrange
-        //act
-        //assert
+        let actual = tamagotchi.getAge()
+        XCTAssertEqual(actual, 0)
         
     }
 

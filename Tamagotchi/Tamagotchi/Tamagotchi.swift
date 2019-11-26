@@ -10,6 +10,7 @@ import Foundation
 
 class Tamagotchi {
     
+    private var name = String()
     private var age: Int = 0
     private var weight: Int = 5
     private var happiness: Int = 0
@@ -19,6 +20,14 @@ class Tamagotchi {
     private var isDirty: Bool = false
     private var needsAttention: Bool = false
     private var needsDiscipline: Bool = false
+    
+    init(name: String = "Sam") {
+        self.name = name
+    }
+    
+    func getName() -> String {
+        return name
+    }
     
     func getAge() -> Int {
         return age
@@ -58,18 +67,6 @@ class Tamagotchi {
         if isSick == true {
             isSick = false
             happiness += 2
-            if happiness > 4 {
-                happiness = 4
-            }
-        } else {
-            happiness -= 1
-        }
-    }
-    
-    func clean() {
-        if isSick == true {
-            isSick = false
-            happiness += 1
             if happiness > 4 {
                 happiness = 4
             }
