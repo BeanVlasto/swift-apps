@@ -20,6 +20,7 @@ class Tamagotchi {
     private var isDirty: Bool = false
     private var needsAttention: Bool = false
     private var needsDiscipline: Bool = false
+    private var isAlive: Bool = true
     
     init(name: String = "Sam") {
         self.name = name
@@ -35,6 +36,18 @@ class Tamagotchi {
     
     func getWeight() -> Int {
         return weight
+    }
+    
+    func getHappiness() -> Int {
+        return happiness
+    }
+    
+    func getIsAlive() -> Bool {
+        return isAlive
+    }
+    
+    func kill() {
+        isAlive = false
     }
     
     func playGame() {
