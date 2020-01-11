@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9F14EBDA23CA50F400B6EB76 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F14EBD923CA50F400B6EB76 /* Car.swift */; };
+		9F14EBDB23CA560F00B6EB76 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5995CC23CA12BC009B296E /* ViewController.swift */; };
+		9F14EBDC23CA561300B6EB76 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F14EBD923CA50F400B6EB76 /* Car.swift */; };
 		9F5995C923CA12BC009B296E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5995C823CA12BC009B296E /* AppDelegate.swift */; };
 		9F5995CB23CA12BC009B296E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5995CA23CA12BC009B296E /* SceneDelegate.swift */; };
 		9F5995CD23CA12BC009B296E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5995CC23CA12BC009B296E /* ViewController.swift */; };
@@ -273,7 +275,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F14EBDB23CA560F00B6EB76 /* ViewController.swift in Sources */,
 				9F5995E023CA12BE009B296E /* CarCustomiserTests.swift in Sources */,
+				9F14EBDC23CA561300B6EB76 /* Car.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

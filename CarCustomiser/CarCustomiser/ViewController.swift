@@ -10,12 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet var carStatistics: UILabel!
+    
     var car = Car(make: "BMW", model: "i8", topSpeed: 200, acceleration: 4.3, handling: 7)
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        print(car.model)
+        carStatistics.text = car.displayStats()
     }
 
 
