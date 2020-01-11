@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet var carStatistics: UILabel!
+    @IBOutlet weak var carStatistics: UILabel!
     
     var car = Car(make: "BMW", model: "i8", topSpeed: 200, acceleration: 4.3, handling: 7)
     
