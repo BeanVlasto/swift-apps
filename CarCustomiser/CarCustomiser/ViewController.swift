@@ -20,6 +20,31 @@ class ViewController: UIViewController {
     var remainingFunds = 0 {
         didSet {
             remainingFundsLabel.text = "Remaining funds: \(remainingFunds)"
+            
+            if remainingFunds < 500 && engineAndExhaustPackage.isOn == false {
+                engineAndExhaustPackage.isEnabled = false
+            } else {
+                engineAndExhaustPackage.isEnabled = true
+            }
+            
+            if remainingFunds < 500 && tiresPackage.isOn == false {
+                tiresPackage.isEnabled = false
+            } else {
+                tiresPackage.isEnabled = true
+            }
+            
+            if remainingFunds < 200 && spoilerPackage.isOn == false {
+                spoilerPackage.isEnabled = false
+            } else {
+                spoilerPackage.isEnabled = true
+            }
+            
+            if remainingFunds < 420 && gearboxPackage.isOn == false {
+                gearboxPackage.isEnabled = false
+            } else {
+                gearboxPackage.isEnabled = true
+            }
+            
         }
     }
     
@@ -45,12 +70,14 @@ class ViewController: UIViewController {
             currentIndex = 0
         }
         car = starterCars.cars[currentIndex]
+        engineAndExhaustPackage.isOn = false
+        tiresPackage.isOn = false
+        spoilerPackage.isOn = false
+        gearboxPackage.isOn = false
+        remainingFunds = 1000
     }
     
     @IBAction func engineAndExhaustPackageToggle(_ sender: Any) {
-        if remainingFunds < 500 {
-            engineAndExhaustPackage.isEnabled = false
-        }
         if engineAndExhaustPackage.isOn {
             car?.topSpeed += 5
             remainingFunds -= 500
@@ -61,9 +88,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func tiresPackageToggle(_ sender: Any) {
-        if remainingFunds < 500 {
-            tiresPackage.isEnabled = false
-        }
         if tiresPackage.isOn {
             car?.handling += 1
             car?.acceleration -= 0.1
@@ -76,9 +100,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func spoilerPackageToggle(_ sender: Any) {
-        if remainingFunds < 200 {
-            spoilerPackage.isEnabled = false
-        }
         if spoilerPackage.isOn {
             car?.handling += 1
             remainingFunds -= 200
@@ -89,15 +110,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func gearboxPackageToggle(_ sender: Any) {
-        if remainingFunds < 400 {
-            gearboxPackage.isEnabled = false
-        }
         if gearboxPackage.isOn {
             car?.acceleration -= 0.4
-            remainingFunds -= 400
+            remainingFunds -= 420
         } else {
             car?.acceleration += 0.4
-            remainingFunds += 400
+            remainingFunds += 420
         }
     }
     
