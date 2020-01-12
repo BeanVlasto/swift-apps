@@ -10,13 +10,24 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var engineAndExhaustPackage: UISwitch!
+    @IBOutlet weak var tiresPackage: UISwitch!
+    @IBOutlet weak var spoilerPackage: UISwitch!
+    @IBOutlet weak var gearboxPackage: UISwitch!
+    @IBOutlet weak var remainingFundsLabel: UILabel!
     @IBOutlet weak var carStatistics: UILabel!
+    
+    var remainingFunds = 0 {
+        didSet {
+            remainingFundsLabel.text = "Remaining funds: \(remainingFunds)"
+        }
+    }
     
     var starterCars = StarterCars()
     var currentIndex = 0
     var car: Car? {
-        didSet(newCar) {
-            carStatistics.text = newCar?.displayStats()
+        didSet {
+            carStatistics.text = car?.displayStats()
         }
     }
     
@@ -25,6 +36,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         car = starterCars.cars[currentIndex]
         carStatistics.text = car?.displayStats()
+        remainingFunds = 1000
     }
     
     @IBAction func nextCar(_ sender: Any) {
@@ -35,6 +47,60 @@ class ViewController: UIViewController {
         car = starterCars.cars[currentIndex]
     }
     
-
+    @IBAction func engineAndExhaustPackageToggle(_ sender: Any) {
+        if remainingFunds < 500 {
+            engineAndExhaustPackage.isEnabled = false
+        }
+        if engineAndExhaustPackage.isOn {
+            car?.topSpeed += 5
+            remainingFunds -= 500
+        } else {
+            car?.topSpeed -= 5
+            remainingFunds += 500
+        }
+    }
+    
+    @IBAction func tiresPackageToggle(_ sender: Any) {
+        if remainingFunds < 500 {
+            tiresPackage.isEnabled = false
+        }
+        if tiresPackage.isOn {
+            car?.handling += 1
+            car?.acceleration -= 0.1
+            remainingFunds -= 500
+        } else {
+            car?.handling -= 1
+            car?.acceleration += 0.1
+            remainingFunds += 500
+        }
+    }
+    
+    @IBAction func spoilerPackageToggle(_ sender: Any) {
+        if remainingFunds < 200 {
+            spoilerPackage.isEnabled = false
+        }
+        if spoilerPackage.isOn {
+            car?.handling += 1
+            remainingFunds -= 200
+        } else {
+            car?.handling -= 1
+            remainingFunds += 200
+        }
+    }
+    
+    @IBAction func gearboxPackageToggle(_ sender: Any) {
+        if remainingFunds < 400 {
+            gearboxPackage.isEnabled = false
+        }
+        if gearboxPackage.isOn {
+            car?.acceleration -= 0.4
+            remainingFunds -= 400
+        } else {
+            car?.acceleration += 0.4
+            remainingFunds += 400
+        }
+    }
+    
+    
 }
 
