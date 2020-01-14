@@ -9,12 +9,19 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var displayStartingStats: UILabel!
+    
+    let tamagotchi = Tamagotchi()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        displayStartingStats.text = tamagotchi.displayStats()
     }
-
-
+    
+    @IBAction func feed(_ sender: Any) {
+        tamagotchi.feed()
+    }
+    
 }
-
