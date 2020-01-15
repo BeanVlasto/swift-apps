@@ -18,6 +18,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Selected car statistics" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0KM-dO-LYJ">
                                 <rect key="frame" x="20" y="51" width="374" height="131"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="displayStatsLabel"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -25,6 +26,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qDJ-tQ-K21">
                                 <rect key="frame" x="20" y="190" width="58" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="nextCarButton"/>
                                 <state key="normal" title="Next car"/>
                                 <connections>
                                     <action selector="nextCar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="169-7V-xia"/>
@@ -40,6 +42,7 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="IAT-DK-Qmo">
                                 <rect key="frame" x="347" y="270" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="tiresPackageSwitch"/>
                                 <connections>
                                     <action selector="tiresPackageToggle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DgV-xF-Mdx"/>
                                 </connections>
@@ -54,6 +57,7 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="aCE-9A-fkJ">
                                 <rect key="frame" x="347" y="309" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="spoilerPackageSwitch"/>
                                 <connections>
                                     <action selector="spoilerPackageToggle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lm0-lI-WvZ"/>
                                 </connections>
@@ -61,6 +65,7 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3S2-2T-6fX">
                                 <rect key="frame" x="347" y="348" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="gearboxPackageSwitch"/>
                                 <connections>
                                     <action selector="gearboxPackageToggle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dF4-IG-Q7a"/>
                                 </connections>
@@ -82,6 +87,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Remaining funds" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdr-Dx-5Vh">
                                 <rect key="frame" x="20" y="396" width="374" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="remainingFundsLabel"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -89,10 +95,19 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ewx-IY-Ehq">
                                 <rect key="frame" x="347" y="231" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="engineAndExhaustPackageSwitch"/>
                                 <connections>
                                     <action selector="engineAndExhaustPackageToggle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JAH-pX-QIk"/>
                                 </connections>
                             </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time remaining" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kuu-yi-JpD">
+                                <rect key="frame" x="276" y="44" width="118" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="remainingTime"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -101,7 +116,9 @@
                         <outlet property="carStatistics" destination="0KM-dO-LYJ" id="XCT-Pl-BnS"/>
                         <outlet property="engineAndExhaustPackage" destination="ewx-IY-Ehq" id="ZYY-sB-9c1"/>
                         <outlet property="gearboxPackage" destination="3S2-2T-6fX" id="Krd-zF-ht1"/>
+                        <outlet property="nextCar" destination="qDJ-tQ-K21" id="nC0-1f-pF1"/>
                         <outlet property="remainingFundsLabel" destination="pdr-Dx-5Vh" id="bl6-pl-5Mi"/>
+                        <outlet property="remainingTimeDisplay" destination="Kuu-yi-JpD" id="RlD-ff-o3O"/>
                         <outlet property="spoilerPackage" destination="aCE-9A-fkJ" id="BU4-Xd-0I7"/>
                         <outlet property="tiresPackage" destination="IAT-DK-Qmo" id="xnH-bD-n8S"/>
                     </connections>

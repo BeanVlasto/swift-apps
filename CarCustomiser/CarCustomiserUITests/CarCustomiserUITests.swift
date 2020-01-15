@@ -23,13 +23,74 @@ class CarCustomiserUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
+    func testWhenBoughtExhaustAndTiresPackageOtherPackagesAreDisabled() {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
+        
+        //act
+        app.switches["engineAndExhaustPackageSwitch"].tap()
+        app.switches["tiresPackageSwitch"].tap()
+        
+        //assert
+        XCTAssertEqual(app.switches["spoilerPackageSwitch"].isEnabled, false)
+        XCTAssertEqual(app.switches["gearboxPackageSwitch"].isEnabled, false)
 
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+    }
+    
+    func testDisplayStatsCorrectlyOutputsStatsOnStartup() {
+        // UI tests must launch the application that they test.
+        let app = XCUIApplication()
+        app.launch()
+        
+        //act
+        let expected = """
+        Make: Mazda
+        Model: MX-5
+        Top speed: 125mph
+        0 -> 60 in: 7.7s
+        Handling: 5
+        """
+        
+        let actual = app.staticTexts["displayStatsLabel"]
+        
+        //assert
+        XCTAssertEqual(actual, expected)
+    }
+    
+    func testButtonsAreEnabledAndOffAfterGoingToNextCar() {
+        let app = XCUIApplication()
+        app.launch()
+        
+        //act
+        app.switches["engineAndExhaustPackageSwitch"].tap()
+        app.switches["tiresPackageSwitch"].tap()
+        app.buttons["nextCarButton"].tap()
+        
+        //assert
+        XCTAssertEqual(app.switches["engineAndExhaustPackageSwitch"].isEnabled, true)
+        XCTAssertEqual(app.switches["tiresPackageSwitch"].isEnabled, true)
+        XCTAssertEqual(app.switches["spoilerPackageSwitch"].isEnabled, true)
+        XCTAssertEqual(app.switches["gearboxPackageSwitch"].isEnabled, true)
+        XCTAssertEqual(app.switches["engineAndExhaustPackageSwitch"].isOn, false)
+        XCTAssertEqual(app.switches["gearboxPackageSwitch"].isOn, false)
+    }
+    
+    func testRemainingFundsResetsAfterGoingToNextCar() {
+        let app = XCUIApplication()
+        app.launch()
+        
+        //act
+        app.switches["engineAndExhaustPackageSwitch"].tap()
+        app.switches["tiresPackageSwitch"].tap()
+        app.buttons["nextCarButton"].tap()
+        let expected = "Remaining funds: 1000"
+        let actual = app.staticTexts["remainingFundsLabel"]
+        
+        //assert
+        XCTAssertEqual(actual, expected)
     }
 
     func testLaunchPerformance() {
@@ -40,4 +101,5 @@ class CarCustomiserUITests: XCTestCase {
             }
         }
     }
+    
 }

@@ -38,6 +38,16 @@
                ReferencedContainer = "container:CarCustomiser.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9F5995E523CA12BE009B296E"
+               BuildableName = "CarCustomiserUITests.xctest"
+               BlueprintName = "CarCustomiserUITests"
+               ReferencedContainer = "container:CarCustomiser.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

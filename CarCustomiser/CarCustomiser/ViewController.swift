@@ -16,35 +16,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var gearboxPackage: UISwitch!
     @IBOutlet weak var remainingFundsLabel: UILabel!
     @IBOutlet weak var carStatistics: UILabel!
+    @IBOutlet weak var remainingTimeDisplay: UILabel!
+    @IBOutlet weak var nextCar: UIButton!
     
+    var timeRemaining = 30
     var remainingFunds = 0 {
         didSet {
             remainingFundsLabel.text = "Remaining funds: \(remainingFunds)"
-            
-            if remainingFunds < 500 && engineAndExhaustPackage.isOn == false {
-                engineAndExhaustPackage.isEnabled = false
-            } else {
-                engineAndExhaustPackage.isEnabled = true
-            }
-            
-            if remainingFunds < 500 && tiresPackage.isOn == false {
-                tiresPackage.isEnabled = false
-            } else {
-                tiresPackage.isEnabled = true
-            }
-            
-            if remainingFunds < 200 && spoilerPackage.isOn == false {
-                spoilerPackage.isEnabled = false
-            } else {
-                spoilerPackage.isEnabled = true
-            }
-            
-            if remainingFunds < 420 && gearboxPackage.isOn == false {
-                gearboxPackage.isEnabled = false
-            } else {
-                gearboxPackage.isEnabled = true
-            }
-            
+            disableUnavailablePackages()
         }
     }
     
@@ -56,11 +35,26 @@ class ViewController: UIViewController {
         }
     }
     
+    var timer: Timer? {
+        didSet {
+            countdown()
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         car = starterCars.cars[currentIndex]
         carStatistics.text = car?.displayStats()
+        remainingFunds = 1000
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(countdown), userInfo: nil, repeats: true)
+    }
+    
+    func resetDisplay() {
+        engineAndExhaustPackage.isOn = false
+        tiresPackage.isOn = false
+        spoilerPackage.isOn = false
+        gearboxPackage.isOn = false
         remainingFunds = 1000
     }
     
@@ -70,11 +64,33 @@ class ViewController: UIViewController {
             currentIndex = 0
         }
         car = starterCars.cars[currentIndex]
-        engineAndExhaustPackage.isOn = false
-        tiresPackage.isOn = false
-        spoilerPackage.isOn = false
-        gearboxPackage.isOn = false
-        remainingFunds = 1000
+        resetDisplay()
+    }
+    
+    func disableUnavailablePackages() {
+        if remainingFunds < 500 && engineAndExhaustPackage.isOn == false {
+            engineAndExhaustPackage.isEnabled = false
+        } else {
+            engineAndExhaustPackage.isEnabled = true
+        }
+        
+        if remainingFunds < 500 && tiresPackage.isOn == false {
+            tiresPackage.isEnabled = false
+        } else {
+            tiresPackage.isEnabled = true
+        }
+        
+        if remainingFunds < 200 && spoilerPackage.isOn == false {
+            spoilerPackage.isEnabled = false
+        } else {
+            spoilerPackage.isEnabled = true
+        }
+        
+        if remainingFunds < 420 && gearboxPackage.isOn == false {
+            gearboxPackage.isEnabled = false
+        } else {
+            gearboxPackage.isEnabled = true
+        }
     }
     
     @IBAction func engineAndExhaustPackageToggle(_ sender: Any) {
@@ -119,6 +135,23 @@ class ViewController: UIViewController {
         }
     }
     
+    func disableEverything() {
+        engineAndExhaustPackage.isEnabled = false
+        tiresPackage.isEnabled = false
+        spoilerPackage.isEnabled = false
+        gearboxPackage.isEnabled = false
+        nextCar.isEnabled = false
+    }
+    
+    @objc func countdown() {
+        if timeRemaining > 0 {
+            timeRemaining -= 1
+            remainingTimeDisplay.text = "\(timeRemaining)"
+        } else {
+            timer?.invalidate()
+            disableEverything()
+        }
+    }
     
 }
 
