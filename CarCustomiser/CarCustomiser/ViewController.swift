@@ -10,14 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var engineAndExhaustPackage: UISwitch!
-    @IBOutlet weak var tiresPackage: UISwitch!
-    @IBOutlet weak var spoilerPackage: UISwitch!
-    @IBOutlet weak var gearboxPackage: UISwitch!
-    @IBOutlet weak var remainingFundsLabel: UILabel!
-    @IBOutlet weak var carStatistics: UILabel!
-    @IBOutlet weak var remainingTimeDisplay: UILabel!
-    @IBOutlet weak var nextCar: UIButton!
+    @IBOutlet var engineAndExhaustPackage: UISwitch!
+    @IBOutlet var tiresPackage: UISwitch!
+    @IBOutlet var spoilerPackage: UISwitch!
+    @IBOutlet var gearboxPackage: UISwitch!
+    @IBOutlet var remainingFundsLabel: UILabel!
+    @IBOutlet var carStatistics: UILabel!
+    @IBOutlet var remainingTimeDisplay: UILabel!
+    @IBOutlet var nextCar: UIButton!
     
     var timeRemaining = 30
     var remainingFunds = 0 {
