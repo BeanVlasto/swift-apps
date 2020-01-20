@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina3_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,104 +12,126 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CarCustomiser" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Selected car statistics" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0KM-dO-LYJ">
-                                <rect key="frame" x="20" y="51" width="374" height="131"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selected car statistics" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0KM-dO-LYJ">
+                                <rect key="frame" x="75.5" y="36" width="169" height="20.5"/>
                                 <accessibility key="accessibilityConfiguration" identifier="displayStatsLabel"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qDJ-tQ-K21">
-                                <rect key="frame" x="20" y="190" width="58" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Engine and exhaust package ($500)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ciw-3W-csp">
+                                <rect key="frame" x="20" y="111.5" width="277" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="IAT-DK-Qmo">
+                                <rect key="frame" x="251" y="145" width="51" height="31"/>
+                                <accessibility key="accessibilityConfiguration" identifier="tiresPackageSwitch"/>
+                                <connections>
+                                    <action selector="tiresPackageToggle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DgV-xF-Mdx"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tires package ($500)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y3L-ro-8a5">
+                                <rect key="frame" x="20" y="150.5" width="165.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spoiler package ($200)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sk3-2s-RPB">
+                                <rect key="frame" x="20" y="189.5" width="181" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gearbox package ($420)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="00g-Q6-sMR">
+                                <rect key="frame" x="20" y="228.5" width="192" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time remaining" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kuu-yi-JpD">
+                                <rect key="frame" x="182.5" y="5" width="117.5" height="21"/>
+                                <accessibility key="accessibilityConfiguration" identifier="remainingTime"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qDJ-tQ-K21">
+                                <rect key="frame" x="75.5" y="61.5" width="58" height="30"/>
                                 <accessibility key="accessibilityConfiguration" identifier="nextCarButton"/>
                                 <state key="normal" title="Next car"/>
                                 <connections>
                                     <action selector="nextCar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="169-7V-xia"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Engine and exhaust package ($500)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ciw-3W-csp">
-                                <rect key="frame" x="20" y="236" width="277" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="IAT-DK-Qmo">
-                                <rect key="frame" x="347" y="270" width="49" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <accessibility key="accessibilityConfiguration" identifier="tiresPackageSwitch"/>
-                                <connections>
-                                    <action selector="tiresPackageToggle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DgV-xF-Mdx"/>
-                                </connections>
-                            </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tires package ($500)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y3L-ro-8a5">
-                                <rect key="frame" x="20" y="275" width="166" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="aCE-9A-fkJ">
-                                <rect key="frame" x="347" y="309" width="49" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <accessibility key="accessibilityConfiguration" identifier="spoilerPackageSwitch"/>
-                                <connections>
-                                    <action selector="spoilerPackageToggle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lm0-lI-WvZ"/>
-                                </connections>
-                            </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3S2-2T-6fX">
-                                <rect key="frame" x="347" y="348" width="49" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <accessibility key="accessibilityConfiguration" identifier="gearboxPackageSwitch"/>
-                                <connections>
-                                    <action selector="gearboxPackageToggle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dF4-IG-Q7a"/>
-                                </connections>
-                            </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Spoiler package ($200)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sk3-2s-RPB">
-                                <rect key="frame" x="20" y="314" width="181" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gearbox package ($420)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="00g-Q6-sMR">
-                                <rect key="frame" x="20" y="353" width="192" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Remaining funds" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdr-Dx-5Vh">
-                                <rect key="frame" x="20" y="396" width="374" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <accessibility key="accessibilityConfiguration" identifier="remainingFundsLabel"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ewx-IY-Ehq">
-                                <rect key="frame" x="347" y="231" width="49" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ewx-IY-Ehq">
+                                <rect key="frame" x="345" y="106" width="51" height="31"/>
                                 <accessibility key="accessibilityConfiguration" identifier="engineAndExhaustPackageSwitch"/>
                                 <connections>
                                     <action selector="engineAndExhaustPackageToggle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JAH-pX-QIk"/>
                                 </connections>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time remaining" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kuu-yi-JpD">
-                                <rect key="frame" x="276" y="44" width="118" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <accessibility key="accessibilityConfiguration" identifier="remainingTime"/>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="aCE-9A-fkJ">
+                                <rect key="frame" x="251" y="184" width="51" height="31"/>
+                                <accessibility key="accessibilityConfiguration" identifier="spoilerPackageSwitch"/>
+                                <connections>
+                                    <action selector="spoilerPackageToggle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lm0-lI-WvZ"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3S2-2T-6fX">
+                                <rect key="frame" x="251" y="223" width="51" height="31"/>
+                                <accessibility key="accessibilityConfiguration" identifier="gearboxPackageSwitch"/>
+                                <connections>
+                                    <action selector="gearboxPackageToggle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dF4-IG-Q7a"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remaining funds" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdr-Dx-5Vh">
+                                <rect key="frame" x="172" y="276" width="128" height="21"/>
+                                <accessibility key="accessibilityConfiguration" identifier="remainingFundsLabel"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="0KM-dO-LYJ" firstAttribute="top" secondItem="Kuu-yi-JpD" secondAttribute="bottom" constant="10" id="03I-v1-ezZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qDJ-tQ-K21" secondAttribute="trailing" constant="10" id="0FW-EK-oJ0"/>
+                            <constraint firstItem="pdr-Dx-5Vh" firstAttribute="top" secondItem="3S2-2T-6fX" secondAttribute="bottom" constant="22" id="0x0-gR-f2F"/>
+                            <constraint firstItem="pdr-Dx-5Vh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="28U-5d-MEd"/>
+                            <constraint firstItem="0KM-dO-LYJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4rJ-hU-LQ8"/>
+                            <constraint firstItem="aCE-9A-fkJ" firstAttribute="top" secondItem="Sk3-2s-RPB" secondAttribute="bottom" constant="-26.333333333333343" id="64n-v0-8mk"/>
+                            <constraint firstItem="Kuu-yi-JpD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="BCi-rn-Yi5"/>
+                            <constraint firstItem="00g-Q6-sMR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="BVw-l3-Szr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3S2-2T-6fX" secondAttribute="trailing" constant="20" id="Cgg-3m-cZ6"/>
+                            <constraint firstItem="aCE-9A-fkJ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Sk3-2s-RPB" secondAttribute="trailing" constant="1" id="Hcq-Bm-AZb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="pdr-Dx-5Vh" secondAttribute="bottom" constant="10" id="J4I-s3-S6E"/>
+                            <constraint firstItem="qDJ-tQ-K21" firstAttribute="leading" secondItem="0KM-dO-LYJ" secondAttribute="leading" id="O3x-5K-Vo3"/>
+                            <constraint firstItem="3S2-2T-6fX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="00g-Q6-sMR" secondAttribute="trailing" constant="1" id="OiN-04-r0w"/>
+                            <constraint firstItem="y3L-ro-8a5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="RKe-OT-Gbt"/>
+                            <constraint firstItem="ciw-3W-csp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="S4q-2d-CPE"/>
+                            <constraint firstItem="Sk3-2s-RPB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="TXD-xZ-yZK"/>
+                            <constraint firstItem="qDJ-tQ-K21" firstAttribute="top" secondItem="0KM-dO-LYJ" secondAttribute="bottom" constant="5" id="bDP-3l-NCP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IAT-DK-Qmo" secondAttribute="trailing" constant="20" id="eCd-zC-I5X"/>
+                            <constraint firstItem="IAT-DK-Qmo" firstAttribute="top" secondItem="y3L-ro-8a5" secondAttribute="bottom" constant="-26.333333333333343" id="eFZ-ur-axW"/>
+                            <constraint firstItem="ewx-IY-Ehq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ciw-3W-csp" secondAttribute="trailing" constant="1" id="k63-vx-UHL"/>
+                            <constraint firstItem="Kuu-yi-JpD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="khW-6a-tSv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aCE-9A-fkJ" secondAttribute="trailing" constant="20" id="kwU-V5-M8M"/>
+                            <constraint firstItem="3S2-2T-6fX" firstAttribute="top" secondItem="00g-Q6-sMR" secondAttribute="bottom" constant="-26.333333333333314" id="lx5-Vk-NaH"/>
+                            <constraint firstItem="IAT-DK-Qmo" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="y3L-ro-8a5" secondAttribute="trailing" constant="1" id="ovw-Kt-YZh"/>
+                            <constraint firstItem="ciw-3W-csp" firstAttribute="top" secondItem="qDJ-tQ-K21" secondAttribute="bottom" constant="20" id="q3o-9V-TJg"/>
+                            <constraint firstItem="ewx-IY-Ehq" firstAttribute="top" secondItem="ciw-3W-csp" secondAttribute="bottom" constant="-26.329999999999998" id="tOS-mV-4z2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Kuu-yi-JpD" secondAttribute="trailing" constant="20" id="tml-x6-sZw"/>
+                            <constraint firstItem="Sk3-2s-RPB" firstAttribute="top" secondItem="y3L-ro-8a5" secondAttribute="bottom" constant="18" id="v4i-Bb-YH0"/>
+                            <constraint firstItem="y3L-ro-8a5" firstAttribute="top" secondItem="ciw-3W-csp" secondAttribute="bottom" constant="18" id="vAB-AB-Qro"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ewx-IY-Ehq" secondAttribute="trailing" constant="20" id="vU7-hW-ZjS"/>
+                            <constraint firstItem="00g-Q6-sMR" firstAttribute="top" secondItem="Sk3-2s-RPB" secondAttribute="bottom" constant="18" id="yEx-Rw-4se"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pdr-Dx-5Vh" secondAttribute="trailing" constant="20" id="zFu-Co-Ilr"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>

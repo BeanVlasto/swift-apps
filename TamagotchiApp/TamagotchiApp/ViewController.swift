@@ -55,12 +55,19 @@ class ViewController: UIViewController {
     }
     
     @IBAction func leftButton(_ sender: Any) {
-        if leftOrRight? == 0 {
+        if leftOrRight == 0 {
             gameDisplay.text = "Correct! Tamagotchi is happier!"
+        } else {
+            gameDisplay.text = "Wrong, your Tamagotchi is sad."
         }
     }
     
     @IBAction func rightButton(_ sender: Any) {
+        if leftOrRight == 1 {
+            gameDisplay.text = "Correct! Tamagotchi is happier!"
+        } else {
+            gameDisplay.text = "Wrong, your Tamagotchi is sad."
+        }
     }
     
     @objc func increaseAge() {
