@@ -15,11 +15,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0SY-Ef-Dra">
-                                <rect key="frame" x="192" y="617" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="B"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="omg-C5-FMs">
                                 <rect key="frame" x="99" y="597" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -81,15 +76,32 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Game timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iAW-gr-thR">
+                                <rect key="frame" x="20" y="127" width="374" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afX-ga-WUy">
+                                <rect key="frame" x="192" y="622" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="💩"/>
+                                <connections>
+                                    <action selector="pooButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="piG-gH-byU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="ageDisplay" destination="3OT-oB-WWw" id="J99-71-AZx"/>
-                        <outlet property="displayStartingStats" destination="Qct-yQ-inL" id="UYq-eN-iGH"/>
+                        <outlet property="displayStats" destination="Qct-yQ-inL" id="UYq-eN-iGH"/>
                         <outlet property="gameDisplay" destination="xVZ-YE-GI3" id="D1O-UP-hiI"/>
+                        <outlet property="gameTimerDisplay" destination="iAW-gr-thR" id="XKn-sd-AEb"/>
                         <outlet property="leftButtonDisplay" destination="omg-C5-FMs" id="QJt-s8-Taj"/>
+                        <outlet property="pooButtonDisplay" destination="afX-ga-WUy" id="sd5-RS-AzV"/>
                         <outlet property="rightButtonDisplay" destination="XJc-gh-mih" id="BHE-xb-nyS"/>
                     </connections>
                 </viewController>

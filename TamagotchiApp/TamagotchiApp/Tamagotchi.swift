@@ -13,10 +13,10 @@ class Tamagotchi {
     var happiness: Int = 0
     var fullness: Double = 0
     var age: Int = 0
-    var weight: Int = 5
+    var weight: Double = 5
     var discipline: Int = 7
     var needsAttention: Bool = false
-    var needsCleaning: Bool = false
+    var health: Int = 100
     var isSick: Bool = false
     
     func feed(type: String) {
@@ -46,7 +46,7 @@ class Tamagotchi {
     func displayStats() -> String {
         return """
         Happiness: \(happiness)
-        Hunger: \(fullness)
+        Full: \(fullness)
         Age: \(age)
         Weight: \(weight)
         Discipline: \(discipline)
