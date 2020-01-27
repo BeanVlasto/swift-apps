@@ -15,6 +15,8 @@
 		9FBC3AB323DF4A2300900643 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FBC3AB123DF4A2300900643 /* LaunchScreen.storyboard */; };
 		9FBC3ABE23DF4A2300900643 /* VisualisingDataStructuresTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBC3ABD23DF4A2300900643 /* VisualisingDataStructuresTests.swift */; };
 		9FBC3AC923DF4A2300900643 /* VisualisingDataStructuresUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBC3AC823DF4A2300900643 /* VisualisingDataStructuresUITests.swift */; };
+		9FBC3AD723DF4A7900900643 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBC3AD623DF4A7900900643 /* Stack.swift */; };
+		9FBC3AD823DF4A7900900643 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBC3AD623DF4A7900900643 /* Stack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,7 @@
 		9FBC3AC423DF4A2300900643 /* VisualisingDataStructuresUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VisualisingDataStructuresUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FBC3AC823DF4A2300900643 /* VisualisingDataStructuresUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualisingDataStructuresUITests.swift; sourceTree = "<group>"; };
 		9FBC3ACA23DF4A2300900643 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FBC3AD623DF4A7900900643 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +109,7 @@
 				9FBC3AAF23DF4A2300900643 /* Assets.xcassets */,
 				9FBC3AB123DF4A2300900643 /* LaunchScreen.storyboard */,
 				9FBC3AB423DF4A2300900643 /* Info.plist */,
+				9FBC3AD623DF4A7900900643 /* Stack.swift */,
 			);
 			path = VisualisingDataStructures;
 			sourceTree = "<group>";
@@ -259,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FBC3AD723DF4A7900900643 /* Stack.swift in Sources */,
 				9FBC3AAB23DF4A2100900643 /* ViewController.swift in Sources */,
 				9FBC3AA723DF4A2100900643 /* AppDelegate.swift in Sources */,
 				9FBC3AA923DF4A2100900643 /* SceneDelegate.swift in Sources */,
@@ -269,6 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FBC3AD823DF4A7900900643 /* Stack.swift in Sources */,
 				9FBC3ABE23DF4A2300900643 /* VisualisingDataStructuresTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
