@@ -1,0 +1,605 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9F3577B723E0D22300DDFAA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3577B623E0D22300DDFAA2 /* AppDelegate.swift */; };
+		9F3577B923E0D22300DDFAA2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3577B823E0D22300DDFAA2 /* SceneDelegate.swift */; };
+		9F3577BB23E0D22300DDFAA2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3577BA23E0D22300DDFAA2 /* ViewController.swift */; };
+		9F3577BE23E0D22300DDFAA2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F3577BC23E0D22300DDFAA2 /* Main.storyboard */; };
+		9F3577C023E0D22400DDFAA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F3577BF23E0D22400DDFAA2 /* Assets.xcassets */; };
+		9F3577C323E0D22400DDFAA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F3577C123E0D22400DDFAA2 /* LaunchScreen.storyboard */; };
+		9F3577CE23E0D22400DDFAA2 /* AbsenceRecorderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3577CD23E0D22400DDFAA2 /* AbsenceRecorderTests.swift */; };
+		9F3577D923E0D22400DDFAA2 /* AbsenceRecorderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3577D823E0D22400DDFAA2 /* AbsenceRecorderUITests.swift */; };
+		9F3577E723E0D4BD00DDFAA2 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3577E623E0D4BD00DDFAA2 /* Student.swift */; };
+		9F3577E923E0D50F00DDFAA2 /* Division.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3577E823E0D50F00DDFAA2 /* Division.swift */; };
+		9F3577EB23E0D7DB00DDFAA2 /* DivisionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3577EA23E0D7DB00DDFAA2 /* DivisionFactory.swift */; };
+		9F3577ED23E0D8D400DDFAA2 /* StudentFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3577EC23E0D8D400DDFAA2 /* StudentFactory.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9F3577CA23E0D22400DDFAA2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9F3577AB23E0D22300DDFAA2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9F3577B223E0D22300DDFAA2;
+			remoteInfo = AbsenceRecorder;
+		};
+		9F3577D523E0D22400DDFAA2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9F3577AB23E0D22300DDFAA2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9F3577B223E0D22300DDFAA2;
+			remoteInfo = AbsenceRecorder;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9F3577B323E0D22300DDFAA2 /* AbsenceRecorder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AbsenceRecorder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F3577B623E0D22300DDFAA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9F3577B823E0D22300DDFAA2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		9F3577BA23E0D22300DDFAA2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9F3577BD23E0D22300DDFAA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9F3577BF23E0D22400DDFAA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9F3577C223E0D22400DDFAA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9F3577C423E0D22400DDFAA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F3577C923E0D22400DDFAA2 /* AbsenceRecorderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AbsenceRecorderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F3577CD23E0D22400DDFAA2 /* AbsenceRecorderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbsenceRecorderTests.swift; sourceTree = "<group>"; };
+		9F3577CF23E0D22400DDFAA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F3577D423E0D22400DDFAA2 /* AbsenceRecorderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AbsenceRecorderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F3577D823E0D22400DDFAA2 /* AbsenceRecorderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbsenceRecorderUITests.swift; sourceTree = "<group>"; };
+		9F3577DA23E0D22400DDFAA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F3577E623E0D4BD00DDFAA2 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		9F3577E823E0D50F00DDFAA2 /* Division.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Division.swift; sourceTree = "<group>"; };
+		9F3577EA23E0D7DB00DDFAA2 /* DivisionFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivisionFactory.swift; sourceTree = "<group>"; };
+		9F3577EC23E0D8D400DDFAA2 /* StudentFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentFactory.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9F3577B023E0D22300DDFAA2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F3577C623E0D22400DDFAA2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F3577D123E0D22400DDFAA2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9F3577AA23E0D22300DDFAA2 = {
+			isa = PBXGroup;
+			children = (
+				9F3577B523E0D22300DDFAA2 /* AbsenceRecorder */,
+				9F3577CC23E0D22400DDFAA2 /* AbsenceRecorderTests */,
+				9F3577D723E0D22400DDFAA2 /* AbsenceRecorderUITests */,
+				9F3577B423E0D22300DDFAA2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9F3577B423E0D22300DDFAA2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9F3577B323E0D22300DDFAA2 /* AbsenceRecorder.app */,
+				9F3577C923E0D22400DDFAA2 /* AbsenceRecorderTests.xctest */,
+				9F3577D423E0D22400DDFAA2 /* AbsenceRecorderUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9F3577B523E0D22300DDFAA2 /* AbsenceRecorder */ = {
+			isa = PBXGroup;
+			children = (
+				9F3577B623E0D22300DDFAA2 /* AppDelegate.swift */,
+				9F3577B823E0D22300DDFAA2 /* SceneDelegate.swift */,
+				9F3577BA23E0D22300DDFAA2 /* ViewController.swift */,
+				9F3577BC23E0D22300DDFAA2 /* Main.storyboard */,
+				9F3577BF23E0D22400DDFAA2 /* Assets.xcassets */,
+				9F3577C123E0D22400DDFAA2 /* LaunchScreen.storyboard */,
+				9F3577C423E0D22400DDFAA2 /* Info.plist */,
+				9F3577E623E0D4BD00DDFAA2 /* Student.swift */,
+				9F3577E823E0D50F00DDFAA2 /* Division.swift */,
+				9F3577EA23E0D7DB00DDFAA2 /* DivisionFactory.swift */,
+				9F3577EC23E0D8D400DDFAA2 /* StudentFactory.swift */,
+			);
+			path = AbsenceRecorder;
+			sourceTree = "<group>";
+		};
+		9F3577CC23E0D22400DDFAA2 /* AbsenceRecorderTests */ = {
+			isa = PBXGroup;
+			children = (
+				9F3577CD23E0D22400DDFAA2 /* AbsenceRecorderTests.swift */,
+				9F3577CF23E0D22400DDFAA2 /* Info.plist */,
+			);
+			path = AbsenceRecorderTests;
+			sourceTree = "<group>";
+		};
+		9F3577D723E0D22400DDFAA2 /* AbsenceRecorderUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9F3577D823E0D22400DDFAA2 /* AbsenceRecorderUITests.swift */,
+				9F3577DA23E0D22400DDFAA2 /* Info.plist */,
+			);
+			path = AbsenceRecorderUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9F3577B223E0D22300DDFAA2 /* AbsenceRecorder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F3577DD23E0D22400DDFAA2 /* Build configuration list for PBXNativeTarget "AbsenceRecorder" */;
+			buildPhases = (
+				9F3577AF23E0D22300DDFAA2 /* Sources */,
+				9F3577B023E0D22300DDFAA2 /* Frameworks */,
+				9F3577B123E0D22300DDFAA2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AbsenceRecorder;
+			productName = AbsenceRecorder;
+			productReference = 9F3577B323E0D22300DDFAA2 /* AbsenceRecorder.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9F3577C823E0D22400DDFAA2 /* AbsenceRecorderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F3577E023E0D22400DDFAA2 /* Build configuration list for PBXNativeTarget "AbsenceRecorderTests" */;
+			buildPhases = (
+				9F3577C523E0D22400DDFAA2 /* Sources */,
+				9F3577C623E0D22400DDFAA2 /* Frameworks */,
+				9F3577C723E0D22400DDFAA2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9F3577CB23E0D22400DDFAA2 /* PBXTargetDependency */,
+			);
+			name = AbsenceRecorderTests;
+			productName = AbsenceRecorderTests;
+			productReference = 9F3577C923E0D22400DDFAA2 /* AbsenceRecorderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9F3577D323E0D22400DDFAA2 /* AbsenceRecorderUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F3577E323E0D22400DDFAA2 /* Build configuration list for PBXNativeTarget "AbsenceRecorderUITests" */;
+			buildPhases = (
+				9F3577D023E0D22400DDFAA2 /* Sources */,
+				9F3577D123E0D22400DDFAA2 /* Frameworks */,
+				9F3577D223E0D22400DDFAA2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9F3577D623E0D22400DDFAA2 /* PBXTargetDependency */,
+			);
+			name = AbsenceRecorderUITests;
+			productName = AbsenceRecorderUITests;
+			productReference = 9F3577D423E0D22400DDFAA2 /* AbsenceRecorderUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9F3577AB23E0D22300DDFAA2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Vlasto, Benedict (JDN)";
+				TargetAttributes = {
+					9F3577B223E0D22300DDFAA2 = {
+						CreatedOnToolsVersion = 11.3;
+					};
+					9F3577C823E0D22400DDFAA2 = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = 9F3577B223E0D22300DDFAA2;
+					};
+					9F3577D323E0D22400DDFAA2 = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = 9F3577B223E0D22300DDFAA2;
+					};
+				};
+			};
+			buildConfigurationList = 9F3577AE23E0D22300DDFAA2 /* Build configuration list for PBXProject "AbsenceRecorder" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9F3577AA23E0D22300DDFAA2;
+			productRefGroup = 9F3577B423E0D22300DDFAA2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9F3577B223E0D22300DDFAA2 /* AbsenceRecorder */,
+				9F3577C823E0D22400DDFAA2 /* AbsenceRecorderTests */,
+				9F3577D323E0D22400DDFAA2 /* AbsenceRecorderUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9F3577B123E0D22300DDFAA2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F3577C323E0D22400DDFAA2 /* LaunchScreen.storyboard in Resources */,
+				9F3577C023E0D22400DDFAA2 /* Assets.xcassets in Resources */,
+				9F3577BE23E0D22300DDFAA2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F3577C723E0D22400DDFAA2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F3577D223E0D22400DDFAA2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9F3577AF23E0D22300DDFAA2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F3577BB23E0D22300DDFAA2 /* ViewController.swift in Sources */,
+				9F3577ED23E0D8D400DDFAA2 /* StudentFactory.swift in Sources */,
+				9F3577B723E0D22300DDFAA2 /* AppDelegate.swift in Sources */,
+				9F3577E923E0D50F00DDFAA2 /* Division.swift in Sources */,
+				9F3577B923E0D22300DDFAA2 /* SceneDelegate.swift in Sources */,
+				9F3577E723E0D4BD00DDFAA2 /* Student.swift in Sources */,
+				9F3577EB23E0D7DB00DDFAA2 /* DivisionFactory.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F3577C523E0D22400DDFAA2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F3577CE23E0D22400DDFAA2 /* AbsenceRecorderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F3577D023E0D22400DDFAA2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F3577D923E0D22400DDFAA2 /* AbsenceRecorderUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9F3577CB23E0D22400DDFAA2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9F3577B223E0D22300DDFAA2 /* AbsenceRecorder */;
+			targetProxy = 9F3577CA23E0D22400DDFAA2 /* PBXContainerItemProxy */;
+		};
+		9F3577D623E0D22400DDFAA2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9F3577B223E0D22300DDFAA2 /* AbsenceRecorder */;
+			targetProxy = 9F3577D523E0D22400DDFAA2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9F3577BC23E0D22300DDFAA2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9F3577BD23E0D22300DDFAA2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9F3577C123E0D22400DDFAA2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9F3577C223E0D22400DDFAA2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9F3577DB23E0D22400DDFAA2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9F3577DC23E0D22400DDFAA2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9F3577DE23E0D22400DDFAA2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = AbsenceRecorder/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.BeanVlasto.AbsenceRecorder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9F3577DF23E0D22400DDFAA2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = AbsenceRecorder/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.BeanVlasto.AbsenceRecorder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		9F3577E123E0D22400DDFAA2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = AbsenceRecorderTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.BeanVlasto.AbsenceRecorderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AbsenceRecorder.app/AbsenceRecorder";
+			};
+			name = Debug;
+		};
+		9F3577E223E0D22400DDFAA2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = AbsenceRecorderTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.BeanVlasto.AbsenceRecorderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AbsenceRecorder.app/AbsenceRecorder";
+			};
+			name = Release;
+		};
+		9F3577E423E0D22400DDFAA2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = AbsenceRecorderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.BeanVlasto.AbsenceRecorderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AbsenceRecorder;
+			};
+			name = Debug;
+		};
+		9F3577E523E0D22400DDFAA2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = AbsenceRecorderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.BeanVlasto.AbsenceRecorderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AbsenceRecorder;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9F3577AE23E0D22300DDFAA2 /* Build configuration list for PBXProject "AbsenceRecorder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F3577DB23E0D22400DDFAA2 /* Debug */,
+				9F3577DC23E0D22400DDFAA2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9F3577DD23E0D22400DDFAA2 /* Build configuration list for PBXNativeTarget "AbsenceRecorder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F3577DE23E0D22400DDFAA2 /* Debug */,
+				9F3577DF23E0D22400DDFAA2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9F3577E023E0D22400DDFAA2 /* Build configuration list for PBXNativeTarget "AbsenceRecorderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F3577E123E0D22400DDFAA2 /* Debug */,
+				9F3577E223E0D22400DDFAA2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9F3577E323E0D22400DDFAA2 /* Build configuration list for PBXNativeTarget "AbsenceRecorderUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F3577E423E0D22400DDFAA2 /* Debug */,
+				9F3577E523E0D22400DDFAA2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9F3577AB23E0D22300DDFAA2 /* Project object */;
+}
