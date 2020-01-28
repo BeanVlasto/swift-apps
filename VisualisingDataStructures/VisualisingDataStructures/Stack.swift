@@ -14,8 +14,8 @@ class Stack {
     var stackArray: [String] = []
     
     func push(item: String) {
+        stackArray.append(item)
         top += 1
-        stackArray[top] = item
     }
     
     func pop() -> String? {
@@ -37,11 +37,15 @@ class Stack {
         }
     }
     
-    func display() {
+    func display() -> [String]? {
         if top == -1 {
             print("Can't be done, stack empty.")
+            return nil
         } else {
-            for i in range 
+            for i in 0 ..< stackArray.count {
+                print(stackArray[i])
+            }
+            return stackArray
         }
     }
 }

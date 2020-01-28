@@ -9,12 +9,22 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    let stack = Stack()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
+    
+    @IBAction func pushButton(_ sender: Any) {
+        stack.push(item: "some data")
+    }
+    
+    @IBAction func popButton(_ sender: Any) {
+        stack.pop()
+    }
+    
 
 }
 
