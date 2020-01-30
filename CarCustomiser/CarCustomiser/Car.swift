@@ -21,7 +21,7 @@ struct Car {
         Make: \(make)
         Model: \(model)
         Top speed: \(topSpeed)mph
-        0 -> 60 in: \(acceleration)s
+        0 -> 60 in: \(String(format: "%.1f", acceleration))s
         Handling: \(handling)
         """
     }
