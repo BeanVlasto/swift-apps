@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UITableViewController {
     
     var divisions: [Division] = []
 
@@ -17,12 +17,23 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         addDummyData()
         for eachDivision in divisions {
-            print(eachDivision.code)
-            print(eachDivision.size)
+            print("Code: \(eachDivision.code), Size: \(eachDivision.students.count)")
             for eachStudent in eachDivision.students {
                 print(eachStudent.forename)
             }
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return divisions.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Division", for: indexPath)
+        
+        cell.textLabel?.text = divisions[indexPath.row].code
+        
+        return cell
     }
 
     func addDummyData() {

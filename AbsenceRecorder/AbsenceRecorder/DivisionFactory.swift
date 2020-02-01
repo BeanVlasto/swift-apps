@@ -10,7 +10,7 @@ import Foundation
 
 class DivisionFactory {
     static func createDivision(code: String, size: Int) -> Division {
-        let division = Division(code: code, size: size)
+        let division = Division(code: code)
         division.students = StudentFactory.createStudents(size: size)
         return division
     }
