@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OLm-aX-hnq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lQc-mk-VJt">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -53,9 +54,9 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tJm-tE-FIK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="768.11594202898561" y="133.92857142857142"/>
+            <point key="canvasLocation" x="1678.2608695652175" y="133.92857142857142"/>
         </scene>
-        <!--Division Absence View Controller-->
+        <!--Students-->
         <scene sceneID="E55-Sa-Xy3">
             <objects>
                 <tableViewController storyboardIdentifier="DivisionAbsenceViewController" id="GaX-Zg-A3d" customClass="DivisionAbsenceViewController" customModule="AbsenceRecorder" customModuleProvider="target" sceneMemberID="viewController">
@@ -87,15 +88,17 @@
                             <outlet property="delegate" destination="GaX-Zg-A3d" id="O5w-ix-kdI"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Students" id="NnU-8t-eUb"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F3h-qn-FWY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1678" y="136"/>
+            <point key="canvasLocation" x="3497.1014492753625" y="135.9375"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Absence-->
         <scene sceneID="ofN-B0-pNK">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OLm-aX-hnq" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Absence" image="square.and.pencil" catalog="system" id="fH7-Fy-7Lg"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Vg2-PW-wM7">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -108,11 +111,74 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Vy-HR-Cvk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="768.11594202898561" y="133.92857142857142"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gzu-hV-8gU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cf5-B6-Nbt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hnq-fZ-nlx">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="GaX-Zg-A3d" kind="relationship" relationship="rootViewController" id="Ag7-7j-Zfd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gyv-rc-0kp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2586.9565217391305" y="135.9375"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="R3E-wI-PlE">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="lQc-mk-VJt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="g3K-kG-DWk">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="OLm-aX-hnq" kind="relationship" relationship="viewControllers" id="QJp-7P-1MQ"/>
+                        <segue destination="waf-wx-LbP" kind="relationship" relationship="viewControllers" id="h9W-AC-vam"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mJE-wk-jOf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="-142.02898550724638" y="133.92857142857142"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="ySt-Wo-MPz">
+            <objects>
+                <viewController id="waf-wx-LbP" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7gY-Bv-vYR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Search View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1y-X2-HYm">
+                                <rect key="frame" x="160" y="438" width="95" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="wUG-kQ-ESe"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="JF6-fw-P7z"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lxh-Tg-1JM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-143" y="858"/>
         </scene>
     </scenes>
     <resources>
         <image name="arrow.left" catalog="system" width="64" height="48"/>
         <image name="arrow.right" catalog="system" width="64" height="48"/>
+        <image name="magnifyingglass" catalog="system" width="64" height="56"/>
+        <image name="square.and.pencil" catalog="system" width="64" height="58"/>
     </resources>
 </document>

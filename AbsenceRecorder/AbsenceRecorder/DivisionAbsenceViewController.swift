@@ -14,7 +14,7 @@ class DivisionAbsenceViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationItem.title = division?.code
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

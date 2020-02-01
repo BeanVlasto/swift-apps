@@ -48,9 +48,9 @@ class ViewController: UITableViewController {
     }
     
     func updateDateDisplay() {
-           let formatter = DateFormatter()
-           formatter.dateStyle = .medium
-           navigationItem.title = formatter.string(from: currentDate)
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        navigationItem.title = formatter.string(from: currentDate)
     }
 
     func addDummyData() {
