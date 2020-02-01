@@ -56,7 +56,7 @@
             </objects>
             <point key="canvasLocation" x="1678.2608695652175" y="133.92857142857142"/>
         </scene>
-        <!--Students-->
+        <!--DivisionAbsence-->
         <scene sceneID="E55-Sa-Xy3">
             <objects>
                 <tableViewController storyboardIdentifier="DivisionAbsenceViewController" id="GaX-Zg-A3d" customClass="DivisionAbsenceViewController" customModule="AbsenceRecorder" customModuleProvider="target" sceneMemberID="viewController">
@@ -88,7 +88,7 @@
                             <outlet property="delegate" destination="GaX-Zg-A3d" id="O5w-ix-kdI"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Students" id="NnU-8t-eUb"/>
+                    <navigationItem key="navigationItem" title="DivisionAbsence" id="NnU-8t-eUb"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F3h-qn-FWY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
