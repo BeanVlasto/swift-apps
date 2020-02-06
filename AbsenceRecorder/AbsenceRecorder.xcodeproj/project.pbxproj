@@ -20,6 +20,8 @@
 		9F3577EB23E0D7DB00DDFAA2 /* DivisionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3577EA23E0D7DB00DDFAA2 /* DivisionFactory.swift */; };
 		9F3577ED23E0D8D400DDFAA2 /* StudentFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3577EC23E0D8D400DDFAA2 /* StudentFactory.swift */; };
 		9FD7167D23E5ED7200980509 /* DivisionAbsenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD7167C23E5ED7200980509 /* DivisionAbsenceViewController.swift */; };
+		9FE7E41023EC8EFF00407593 /* StudentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE7E40F23EC8EFF00407593 /* StudentCell.swift */; };
+		9FE7E41223EC974900407593 /* Absence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE7E41123EC974900407593 /* Absence.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		9F3577EA23E0D7DB00DDFAA2 /* DivisionFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivisionFactory.swift; sourceTree = "<group>"; };
 		9F3577EC23E0D8D400DDFAA2 /* StudentFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentFactory.swift; sourceTree = "<group>"; };
 		9FD7167C23E5ED7200980509 /* DivisionAbsenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivisionAbsenceViewController.swift; sourceTree = "<group>"; };
+		9FE7E40F23EC8EFF00407593 /* StudentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCell.swift; sourceTree = "<group>"; };
+		9FE7E41123EC974900407593 /* Absence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Absence.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +125,8 @@
 				9F3577EA23E0D7DB00DDFAA2 /* DivisionFactory.swift */,
 				9F3577EC23E0D8D400DDFAA2 /* StudentFactory.swift */,
 				9FD7167C23E5ED7200980509 /* DivisionAbsenceViewController.swift */,
+				9FE7E40F23EC8EFF00407593 /* StudentCell.swift */,
+				9FE7E41123EC974900407593 /* Absence.swift */,
 			);
 			path = AbsenceRecorder;
 			sourceTree = "<group>";
@@ -277,9 +283,11 @@
 				9F3577BB23E0D22300DDFAA2 /* ViewController.swift in Sources */,
 				9F3577ED23E0D8D400DDFAA2 /* StudentFactory.swift in Sources */,
 				9F3577B723E0D22300DDFAA2 /* AppDelegate.swift in Sources */,
+				9FE7E41023EC8EFF00407593 /* StudentCell.swift in Sources */,
 				9FD7167D23E5ED7200980509 /* DivisionAbsenceViewController.swift in Sources */,
 				9F3577E923E0D50F00DDFAA2 /* Division.swift in Sources */,
 				9F3577B923E0D22300DDFAA2 /* SceneDelegate.swift in Sources */,
+				9FE7E41223EC974900407593 /* Absence.swift in Sources */,
 				9F3577E723E0D4BD00DDFAA2 /* Student.swift in Sources */,
 				9F3577EB23E0D7DB00DDFAA2 /* DivisionFactory.swift in Sources */,
 			);

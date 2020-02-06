@@ -13,7 +13,7 @@ class Tamagotchi {
     var happiness: Int = 0
     var fullness: Double = 0
     var age: Int = 0
-    var weight: Double = 5
+    var weight: Double = 10
     var discipline: Int = 7
     var needsAttention: Bool = false
     var health: Int = 100

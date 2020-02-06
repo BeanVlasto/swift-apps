@@ -56,16 +56,17 @@
             </objects>
             <point key="canvasLocation" x="1678.2608695652175" y="133.92857142857142"/>
         </scene>
-        <!--DivisionAbsence-->
+        <!--DivisionAbsenceView-->
         <scene sceneID="E55-Sa-Xy3">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F3h-qn-FWY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tableViewController storyboardIdentifier="DivisionAbsenceViewController" id="GaX-Zg-A3d" customClass="DivisionAbsenceViewController" customModule="AbsenceRecorder" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="6g2-SY-cg5">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="6g2-SY-cg5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Student" textLabel="gVm-ZV-FDa" style="IBUITableViewCellStyleDefault" id="Ufx-gb-X2O">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Student" textLabel="gVm-ZV-FDa" style="IBUITableViewCellStyleDefault" id="Ufx-gb-X2O" customClass="StudentCell" customModule="AbsenceRecorder" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ufx-gb-X2O" id="c0p-TW-3J1">
@@ -88,9 +89,8 @@
                             <outlet property="delegate" destination="GaX-Zg-A3d" id="O5w-ix-kdI"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="DivisionAbsence" id="NnU-8t-eUb"/>
+                    <navigationItem key="navigationItem" title="DivisionAbsenceView" id="NnU-8t-eUb"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="F3h-qn-FWY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3497.1014492753625" y="135.9375"/>
         </scene>
@@ -137,6 +137,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="lQc-mk-VJt" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="g3K-kG-DWk">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

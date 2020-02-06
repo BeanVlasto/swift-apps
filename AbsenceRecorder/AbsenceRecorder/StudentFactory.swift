@@ -11,11 +11,14 @@ import Foundation
 class StudentFactory {
     static func createStudents(size: Int) -> [Student] {
         var arrayOfStudents: [Student] = []
-        let arrayOfNames = ["Charlie", "Johnny", "Fergus", "Grace", "Lola", "Alex", "Petra", "Catherine", "Freddy", "Tom", "Susan", "Boyle"]
+        /*let arrayOfNames = ["Charlie", "Johnny", "Fergus", "Grace", "Lola", "Alex", "Petra", "Catherine", "Freddy", "Tom", "Susan", "Boyle"]
         for _ in 1 ... size {
             let nameSelector = Int.random(in: 0 ..< arrayOfNames.count)
             let randomName = arrayOfNames[nameSelector]
             arrayOfStudents.append(Student(forename: randomName, surname: "Vlasto", birthday: Date()))
+        }*/
+        for i in 1 ... size {
+            arrayOfStudents.append(Student(forename: "Student \(i)", surname: "Vlasto", birthday: Date()))
         }
         return arrayOfStudents
     }

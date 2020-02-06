@@ -16,6 +16,9 @@ class ViewController: UIViewController {
     @IBOutlet var gameDisplay: UILabel!
     @IBOutlet var leftButtonDisplay: UIButton!
     @IBOutlet var rightButtonDisplay: UIButton!
+    @IBOutlet var feedMealDisplay: UIButton!
+    @IBOutlet var feedSnackDisplay: UIButton!
+    @IBOutlet var playGameDisplay: UIButton!
     @IBOutlet var pooButtonDisplay: UIButton!
     
     let tamagotchi = Tamagotchi()
@@ -25,6 +28,8 @@ class ViewController: UIViewController {
     var agingTimer: Timer?
     var gameTimer: Timer?
     var gameTimeRemaining = 3
+    var needsCleaning = false
+    var dead = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,9 +45,13 @@ class ViewController: UIViewController {
     }
     
     func updateDisplay() {
-        displayStats.text = tamagotchi.displayStats()
-        ageDisplay.text = "Age: \(tamagotchi.age)"
-        gameTimerDisplay.text = "\(gameTimeRemaining)"
+        if dead {
+            displayStats.text = "Your tamagotchi died :I"
+        } else {
+            displayStats.text = tamagotchi.displayStats()
+            ageDisplay.text = "Age: \(tamagotchi.age)"
+            gameTimerDisplay.text = "\(gameTimeRemaining)"
+        }
     }
     
     func endGame() {
@@ -56,10 +65,28 @@ class ViewController: UIViewController {
     func goesToBathroom() {
         pooButtonDisplay.isHidden = false
         pooButtonDisplay.isEnabled = true
+        needsCleaning = true
+    }
+    
+    func killTamagotchi() {
+        displayStats.text = "Your tamagotchi died :I"
+        dead = true
+        agingTimer?.invalidate()
+        feedMealDisplay.isEnabled = false
+        feedSnackDisplay.isEnabled = false
+        playGameDisplay.isEnabled = false
+        pooButtonDisplay.isHidden = true
+        pooButtonDisplay.isEnabled = false
+        gameTimerDisplay.isHidden = true
+        gameDisplay.isHidden = true
+        leftButtonDisplay.isEnabled = false
+        rightButtonDisplay.isEnabled = false
     }
     
     @IBAction func pooButton(_ sender: Any) {
-        
+        needsCleaning = false
+        pooButtonDisplay.isHidden = true
+        pooButtonDisplay.isEnabled = false
     }
     
     @IBAction func feedMeal(_ sender: Any) {
@@ -124,9 +151,8 @@ class ViewController: UIViewController {
     
     @objc func makeTimePass() {
         timePassed += 1
-        let randomBathroomNumber = Int.random(in: 1 ... 20)
-        if randomBathroomNumber == 1 {
-            goesToBathroom()
+        if tamagotchi.weight < 1 {
+            killTamagotchi()
         }
         if timePassed % 5 == 0 {
             //Feeding
@@ -144,6 +170,17 @@ class ViewController: UIViewController {
                     tamagotchi.health -= 10
                 }
             }
+            
+            //Bathroom
+            if needsCleaning {
+                killTamagotchi()
+            } else {
+                let randomBathroomNumber = Int.random(in: 1 ... 4)
+                if randomBathroomNumber == 1 {
+                    goesToBathroom()
+                }
+            }
+            
             updateDisplay()
         }
         if timePassed % 10 == 0 {

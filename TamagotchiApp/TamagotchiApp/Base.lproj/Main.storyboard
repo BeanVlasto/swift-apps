@@ -98,9 +98,12 @@
                     <connections>
                         <outlet property="ageDisplay" destination="3OT-oB-WWw" id="J99-71-AZx"/>
                         <outlet property="displayStats" destination="Qct-yQ-inL" id="UYq-eN-iGH"/>
+                        <outlet property="feedMealDisplay" destination="71N-p6-svx" id="JpV-FT-mEF"/>
+                        <outlet property="feedSnackDisplay" destination="Xze-PV-fzi" id="WXZ-kp-hCB"/>
                         <outlet property="gameDisplay" destination="xVZ-YE-GI3" id="D1O-UP-hiI"/>
                         <outlet property="gameTimerDisplay" destination="iAW-gr-thR" id="XKn-sd-AEb"/>
                         <outlet property="leftButtonDisplay" destination="omg-C5-FMs" id="QJt-s8-Taj"/>
+                        <outlet property="playGameDisplay" destination="JuM-hg-FfC" id="D2j-xs-gWn"/>
                         <outlet property="pooButtonDisplay" destination="afX-ga-WUy" id="sd5-RS-AzV"/>
                         <outlet property="rightButtonDisplay" destination="XJc-gh-mih" id="BHE-xb-nyS"/>
                     </connections>
