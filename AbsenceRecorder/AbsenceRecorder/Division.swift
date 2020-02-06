@@ -16,4 +16,9 @@ class Division {
     init(code: String) {
         self.code = code
     }
+    
+    func getAbsence(for date: Date) -> Absence? {
+        return absences.first { $0.takenOn == date }
+    }
+    
 }

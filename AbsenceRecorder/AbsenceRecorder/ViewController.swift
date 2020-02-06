@@ -17,13 +17,6 @@ class ViewController: UITableViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         addDummyData()
-        for eachDivision in divisions {
-            print("Code: \(eachDivision.code), Size: \(eachDivision.students.count)")
-            for eachStudent in eachDivision.students {
-                print(eachStudent.forename)
-            }
-        }
-        
         updateDateDisplay()
     }
     
@@ -43,10 +36,15 @@ class ViewController: UITableViewController {
         }
         
         let selectedDivision = divisions[indexPath.row]
-        let newAbsence = Absence(date: currentDate)
-        newAbsence.absent.append(contentsOf: selectedDivision.students)
-        selectedDivision.absences.append(newAbsence)
-        vc.absence = newAbsence
+        
+        if let existingAbsence = selectedDivision.getAbsence(for: currentDate) {
+            vc.absence = existingAbsence
+        } else {
+            let newAbsence = Absence(date: currentDate)
+            selectedDivision.absences.append(newAbsence)
+            vc.absence = newAbsence
+        }
+        
         vc.division = selectedDivision
         
         navigationController?.pushViewController(vc, animated: true)
