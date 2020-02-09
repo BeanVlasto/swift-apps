@@ -10,7 +10,7 @@
         <!--Divisions-->
         <scene sceneID="Jlr-pu-07v">
             <objects>
-                <tableViewController id="McD-BD-hak" customClass="ViewController" customModule="AbsenceRecorder" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="McD-BD-hak" customClass="HomeViewController" customModule="AbsenceRecorder" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="WAD-8M-WZR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -59,7 +59,6 @@
         <!--DivisionAbsenceView-->
         <scene sceneID="E55-Sa-Xy3">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="F3h-qn-FWY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tableViewController storyboardIdentifier="DivisionAbsenceViewController" id="GaX-Zg-A3d" customClass="DivisionAbsenceViewController" customModule="AbsenceRecorder" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="6g2-SY-cg5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -91,6 +90,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="DivisionAbsenceView" id="NnU-8t-eUb"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F3h-qn-FWY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3497.1014492753625" y="135.9375"/>
         </scene>
