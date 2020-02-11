@@ -15,6 +15,8 @@
 		9FECBF1F23F2BCFB00BF15A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FECBF1D23F2BCFB00BF15A3 /* LaunchScreen.storyboard */; };
 		9FECBF2A23F2BCFB00BF15A3 /* CommentCardWriterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FECBF2923F2BCFB00BF15A3 /* CommentCardWriterTests.swift */; };
 		9FECBF3523F2BCFB00BF15A3 /* CommentCardWriterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FECBF3423F2BCFB00BF15A3 /* CommentCardWriterUITests.swift */; };
+		9FECBF4323F2BD1E00BF15A3 /* CommentCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FECBF4223F2BD1E00BF15A3 /* CommentCard.swift */; };
+		9FECBF4523F2BD3C00BF15A3 /* CommentCardWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FECBF4423F2BD3C00BF15A3 /* CommentCardWriter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		9FECBF3023F2BCFB00BF15A3 /* CommentCardWriterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CommentCardWriterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FECBF3423F2BCFB00BF15A3 /* CommentCardWriterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCardWriterUITests.swift; sourceTree = "<group>"; };
 		9FECBF3623F2BCFB00BF15A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FECBF4223F2BD1E00BF15A3 /* CommentCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCard.swift; sourceTree = "<group>"; };
+		9FECBF4423F2BD3C00BF15A3 /* CommentCardWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCardWriter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				9FECBF1B23F2BCFB00BF15A3 /* Assets.xcassets */,
 				9FECBF1D23F2BCFB00BF15A3 /* LaunchScreen.storyboard */,
 				9FECBF2023F2BCFB00BF15A3 /* Info.plist */,
+				9FECBF4223F2BD1E00BF15A3 /* CommentCard.swift */,
+				9FECBF4423F2BD3C00BF15A3 /* CommentCardWriter.swift */,
 			);
 			path = CommentCardWriter;
 			sourceTree = "<group>";
@@ -260,8 +266,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FECBF1723F2BCFB00BF15A3 /* ViewController.swift in Sources */,
+				9FECBF4323F2BD1E00BF15A3 /* CommentCard.swift in Sources */,
 				9FECBF1323F2BCFB00BF15A3 /* AppDelegate.swift in Sources */,
 				9FECBF1523F2BCFB00BF15A3 /* SceneDelegate.swift in Sources */,
+				9FECBF4523F2BD3C00BF15A3 /* CommentCardWriter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
