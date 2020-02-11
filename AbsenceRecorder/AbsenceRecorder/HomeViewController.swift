@@ -62,6 +62,23 @@ class HomeViewController: UITableViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let allPresent = UIContextualAction(style: .normal, title: "All Present") { action, view, completionHandler in
+            let division = self.divisions[indexPath.row]
+            if division.getAbsence(for: self.currentDate) == nil {
+                let absence = Absence(date: self.currentDate, present: division.students)
+                division.absences.append(absence)
+            } else {
+                division.absences[indexPath.row].present = division.students
+            }
+            tableView.reloadData()
+            completionHandler(true)
+        }
+        
+        return UISwipeActionsConfiguration(actions: [allPresent])
+    }
+    
     func updateDateDisplay() {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
