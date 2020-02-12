@@ -28,12 +28,12 @@ class DivisionAbsenceViewController: UITableViewController {
         
         navigationItem.title = division.code
         //Here, ONLY add each student to the present list if an absence doesn't already exist for that division on that date.
-        if division.getAbsence == nil {
+        //This isn't quite right, but it works, assuming at least one student is present in each existing absence (a fair assumption).
+        if absence.present == [] {
             for eachStudent in division.students {
                 absence.present.append(eachStudent)
             }
         }
-        
         selectRowsForPresentStudents()
     }
     
