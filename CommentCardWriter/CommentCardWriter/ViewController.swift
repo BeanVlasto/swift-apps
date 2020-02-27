@@ -14,12 +14,19 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet var weaknessPicker: UIPickerView!
     @IBOutlet var improvementPicker: UIPickerView!
     @IBOutlet var commentCardOutput: UILabel!
+    @IBOutlet var subjectInput: UITextField!
+    @IBOutlet var enjoymentSegmentsDisplay: UISegmentedControl!
+    @IBOutlet var strengthTextField: UITextField!
+    @IBOutlet var weaknessTextField: UITextField!
+    @IBOutlet var improvementTextField: UITextField!
     
-    let commentCard = CommentCard(subject: "computer science", teacher: "DPC", content: "")
+    
+    let commentCard = CommentCard(content: "")
     let commentCardWriter = CommentCardWriter()
-    let strengthArray = ["my EWs", "the classwork"]
-    let weaknessArray = ["my EWs", "the classwork"]
-    let improvementArray = ["ask more questions in class"]
+    var enjoyment: Int = 3
+    let strengthArray = ["my EWs", "the classwork", "other"]
+    let weaknessArray = ["my EWs", "the classwork", "other"]
+    let improvementArray = ["ask more questions in class", "put in some extra time outside of class", "other"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +39,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         weaknessPicker.delegate = self
         improvementPicker.dataSource = self
         improvementPicker.delegate = self
+    }
+    
+    func createAlert(caller: String) {
+        let alert = UIAlertController(title: "No \(caller) provided!", message: "Please provide a \(caller).", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -62,9 +75,47 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         return("Something went wrong.")
     }
     
+    @IBAction func enjoymentSegments(_ sender: Any) {
+        enjoyment = enjoymentSegmentsDisplay.selectedSegmentIndex + 1
+    }
+    
     @IBAction func generateCommentCard(_ sender: Any) {
-        commentCard.content = commentCardWriter.writeContent(strength: strengthArray[strengthPicker.selectedRow(inComponent: 0)], weakness: weaknessArray[weaknessPicker.selectedRow(inComponent: 0)], thingToImprove: improvementArray[improvementPicker.selectedRow(inComponent: 0)], subject: commentCard.subject)
-        commentCardOutput.text = commentCard.content
+        
+        var weakness = weaknessArray[weaknessPicker.selectedRow(inComponent: 0)]
+        var strength = strengthArray[strengthPicker.selectedRow(inComponent: 0)]
+        var improvement = improvementArray[improvementPicker.selectedRow(inComponent: 0)]
+        
+        if strengthArray[strengthPicker.selectedRow(inComponent: 0)] == "other" {
+            if strengthTextField.text == "" {
+                createAlert(caller: "strength")
+            } else {
+                strength = strengthTextField.text!
+            }
+        }
+        
+        if weaknessArray[weaknessPicker.selectedRow(inComponent: 0)] == "other" {
+            if weaknessTextField.text == "" {
+                createAlert(caller: "weakness")
+            } else {
+                weakness = weaknessTextField.text!
+            }
+        }
+        
+        if improvementArray[improvementPicker.selectedRow(inComponent: 0)] == "other" {
+            if improvementTextField.text == "" {
+                createAlert(caller: "improvement")
+            } else {
+                improvement = improvementTextField.text!
+            }
+        }
+        
+        if subjectInput.text == "" {
+            createAlert(caller: "subject")
+        } else {
+            commentCard.content = commentCardWriter.writeContent(enjoyment: enjoyment, strength: strength, weakness: weakness, thingToImprove: improvement, subject: subjectInput.text!)
+            commentCardOutput.text = commentCard.content
+        }
+        
     }
     
 }
