@@ -21,7 +21,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         locationManager.requestWhenInUseAuthorization()
         locationManager.delegate = self
-        getArtists()
         
     }
     
@@ -35,11 +34,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 if error != nil {
                     self.musicRecommendations.text = "Could not perform lookup of location for latitude: \(firstLocation.coordinate.latitude.description)"
                 } else {
-                    self.musicRecommendations.text = """
-                    Country: \(placemarks?[0].country ?? "Unable to locate country")
-                    City: \(placemarks?[0].locality ?? "Unable to locate city")
-                    Street: \(placemarks?[0].thoroughfare ?? "Unable to locate street")
-                    """
+                    let searchTerm = placemarks?[0].locality ?? "None"
+                    if let firstWord = searchTerm.components(separatedBy: " ").first {
+                        self.musicRecommendations.text = self.getArtists(searchTerm: firstWord)
+                    }
+                        
                 }
             })
         }
@@ -49,8 +48,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         musicRecommendations.text = "Couldn't access user's location. Error: \(error.localizedDescription)"
     }
     
-    func getArtists() -> String {
-        guard let url = URL(string: "https://itunes.apple.com/search?term=Lionel%20Richie&entity=musicArtist")
+    func getArtists(searchTerm: String) -> String {
+        guard let url = URL(string: "https://itunes.apple.com/search?term=\(searchTerm)&entity=musicArtist")
             else {
                 print("Invalid URL")
                 return("Invalid URL: wasn't able to search Itunes")
@@ -60,7 +59,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let data = data {
-                print(String(decoding: data, as: UTF8.self))
+                if let response = self.parseJson(json: data) {
+                    let names = response.results.map {
+                        return $0.artistName
+                    }
+                    
+                    DispatchQueue.main.async {
+                        self.musicRecommendations.text = names.joined(separator: ", ")
+                    }
+                    
+                }
             }
         }.resume()
         
