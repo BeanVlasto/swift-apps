@@ -16,7 +16,7 @@ class CommentCardWriter {
         } else if enjoyment == 2 {
             return("I'm tolerating \(subject) right now. I'm mostly enjoying \(strength), but I'm struggling a bit with \(weakness). Also, I know I could \(thingToImprove), which I'll work on.")
         } else {
-            return("I've been really enjoying \(subject) so far, and I'm feeling particularly confident with \(strength). However, I'm struggling a bit with \(weakness), and I know I could \(thingToImprove), which I'll work on.")
+            return("I've been really enjoying \(subject) so far, and I'm feeling particularly confident with \(strength). However, I'm struggling a bit with \(weakness), and I know I should \(thingToImprove), which I'll work on.")
         }
     }
     

@@ -8,31 +8,33 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate {
     
     @IBOutlet var strengthPicker: UIPickerView!
     @IBOutlet var weaknessPicker: UIPickerView!
     @IBOutlet var improvementPicker: UIPickerView!
-    @IBOutlet var commentCardOutput: UILabel!
     @IBOutlet var subjectInput: UITextField!
     @IBOutlet var enjoymentSegmentsDisplay: UISegmentedControl!
     @IBOutlet var strengthTextField: UITextField!
     @IBOutlet var weaknessTextField: UITextField!
     @IBOutlet var improvementTextField: UITextField!
+    @IBOutlet var commentCardOutput: UITextView!
+    @IBOutlet var characterCount: UILabel!
     
     
     let commentCard = CommentCard(content: "")
     let commentCardWriter = CommentCardWriter()
-    var enjoyment: Int = 3
-    let strengthArray = ["my EWs", "the classwork", "other"]
-    let weaknessArray = ["my EWs", "the classwork", "other"]
-    let improvementArray = ["ask more questions in class", "put in some extra time outside of class", "other"]
+    var enjoyment: Int = 1
+    let strengthArray = ["my EWs", "the classwork"]
+    let weaknessArray = ["my EWs", "the classwork"]
+    let improvementArray = ["ask more questions in class", "put in some extra time outside of class"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        commentCardOutput.text = ""
+        commentCardOutput.text = "Comment card output here..."
         
+        commentCardOutput.delegate = self
         strengthPicker.dataSource = self
         strengthPicker.delegate = self
         weaknessPicker.dataSource = self
@@ -75,38 +77,36 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         return("Something went wrong.")
     }
     
+    func textViewDidChange(_ textView: UITextView) {
+        characterCount.text = String(commentCardOutput.text.count)
+    }
+    
     @IBAction func enjoymentSegments(_ sender: Any) {
         enjoyment = enjoymentSegmentsDisplay.selectedSegmentIndex + 1
     }
     
     @IBAction func generateCommentCard(_ sender: Any) {
         
-        var weakness = weaknessArray[weaknessPicker.selectedRow(inComponent: 0)]
-        var strength = strengthArray[strengthPicker.selectedRow(inComponent: 0)]
-        var improvement = improvementArray[improvementPicker.selectedRow(inComponent: 0)]
+        var strength: String = ""
+        var weakness: String = ""
+        var improvement: String = ""
         
-        if strengthArray[strengthPicker.selectedRow(inComponent: 0)] == "other" {
-            if strengthTextField.text == "" {
-                createAlert(caller: "strength")
-            } else {
-                strength = strengthTextField.text!
-            }
+        if strengthTextField.text == "" {
+            strength = strengthArray[strengthPicker.selectedRow(inComponent: 0)]
+        } else {
+            strength = strengthTextField.text!
         }
         
-        if weaknessArray[weaknessPicker.selectedRow(inComponent: 0)] == "other" {
-            if weaknessTextField.text == "" {
-                createAlert(caller: "weakness")
-            } else {
-                weakness = weaknessTextField.text!
-            }
+        if weaknessTextField.text == "" {
+            weakness = weaknessArray[weaknessPicker.selectedRow(inComponent: 0)]
+        } else {
+            weakness = weaknessTextField.text!
         }
         
-        if improvementArray[improvementPicker.selectedRow(inComponent: 0)] == "other" {
-            if improvementTextField.text == "" {
-                createAlert(caller: "improvement")
-            } else {
-                improvement = improvementTextField.text!
-            }
+        if improvementTextField.text == "" {
+            improvement = improvementArray[improvementPicker.selectedRow(inComponent: 0)]
+        } else {
+            improvement = improvementTextField.text!
         }
         
         if subjectInput.text == "" {
@@ -114,6 +114,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         } else {
             commentCard.content = commentCardWriter.writeContent(enjoyment: enjoyment, strength: strength, weakness: weakness, thingToImprove: improvement, subject: subjectInput.text!)
             commentCardOutput.text = commentCard.content
+            characterCount.text = String(commentCard.content.count)
         }
         
     }
