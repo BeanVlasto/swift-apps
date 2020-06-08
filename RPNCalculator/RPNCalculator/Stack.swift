@@ -10,18 +10,35 @@ import Foundation
 
 class Stack {
     
-    var stack: [Int] = []
+    var array: [Int] = []
     
     func pop() -> Int? {
-        return stack.popLast()
+        if array.count == 0 {
+            print("Stack empty.")
+        }
+        return array.popLast()
     }
     
     func push(data: Int) {
-        stack.append(data)
+        array.append(data)
     }
     
     func peek() -> Int? {
-        return stack.last
+        if array.count == 0 {
+            print("Stack empty.")
+        }
+        return array.last
+    }
+    
+    func empty() {
+        array = []
+    }
+    
+    func isEmpty() -> Bool {
+        if array.count == 0 {
+            return true
+        }
+        return false
     }
     
 }
