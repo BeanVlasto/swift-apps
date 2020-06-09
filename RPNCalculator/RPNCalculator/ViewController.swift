@@ -26,94 +26,112 @@ class ViewController: UIViewController {
         }
     }
     
-    func add() {
-        if stack.array.count > 1 {
-            let num_1 = stack.pop()!
-            let num_2 = stack.pop()!
-            let result = num_1 + num_2
-            stack.push(data: result)
+    func addNumberToStack() {
+        addToStack(number: number)
+        number = ""
+    }
+    
+    func digitEntered(digit: String) {
+        if number.count > 2 {
+            invalidNumberAlert()
         } else {
-            display.text! = "Invalid equation"
-            // self.clear(nil)
+            display.text! += digit
+            number += digit
+        }
+    }
+    
+    func returnNumbersForCalculation() -> [Int]? {
+        if stack.array.count > 1 {
+            let num_2 = stack.pop()! // When subtracting (or dividing), the first thing to be popped should be subtracted from the second, hence "num_2" is popped first.
+            let num_1 = stack.pop()!
+            return [num_1, num_2]
+        } else {
+            invalidCalculationAlert()
+            let endOfString = display.text!.firstIndex(of: " ")!
+            display.text! = String(display.text![...endOfString])
+            return nil
+        }
+    }
+    
+    func invalidCalculationAlert() {
+        let alert = UIAlertController(title: "Invalid calculation", message: "Two numbers are required per operation", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Close", style: .default, handler: nil))
+        self.present(alert, animated: true)
+    }
+    
+    func invalidNumberAlert() {
+        let alert = UIAlertController(title: "Invalid number", message: "Numbers must be 3 digits or less", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Close", style: .default, handler: nil))
+        self.present(alert, animated: true)
+    }
+    
+    func add() {
+        if let num_array = returnNumbersForCalculation() {
+            let result = num_array[0] + num_array[1]
+            stack.push(data: result)
         }
     }
     
     func subtract() {
-        if stack.array.count > 1 {
-            let num_1 = stack.pop()!
-            let num_2 = stack.pop()!
-            let result = num_2 - num_1
+        if let num_array = returnNumbersForCalculation() {
+            let result = num_array[0] - num_array[1]
             stack.push(data: result)
         }
     }
     
     func multiply() {
-        if stack.array.count > 1 {
-            let num_1 = stack.pop()!
-            let num_2 = stack.pop()!
-            let result = num_1 * num_2
+        if let num_array = returnNumbersForCalculation() {
+            let result = num_array[0] * num_array[1]
             stack.push(data: result)
         }
     }
     
     func divide() {
-        if stack.array.count > 1 {
-            let num_1 = stack.pop()!
-            let num_2 = stack.pop()!
-            let result = Int(num_2 / num_1)
+        if let num_array = returnNumbersForCalculation() {
+            let result = num_array[0] / num_array[1]
             stack.push(data: result)
         }
     }
     
     
     @IBAction func zero(_ sender: Any) {
-        display.text! += "0"
-        number += "0"
+        digitEntered(digit: "0")
     }
     
     @IBAction func one(_ sender: Any) {
-        display.text! += "1"
-        number += "1"
+        digitEntered(digit: "1")
     }
     
     @IBAction func two(_ sender: Any) {
-        display.text! += "2"
-        number += "2"
+        digitEntered(digit: "2")
     }
     
     @IBAction func three(_ sender: Any) {
-        display.text! += "3"
-        number += "3"
+        digitEntered(digit: "3")
     }
     
     @IBAction func four(_ sender: Any) {
-        display.text! += "4"
-        number += "4"
+        digitEntered(digit: "4")
     }
     
     @IBAction func five(_ sender: Any) {
-        display.text! += "5"
-        number += "5"
+        digitEntered(digit: "5")
     }
     
     @IBAction func six(_ sender: Any) {
-        display.text! += "6"
-        number += "6"
+        digitEntered(digit: "6")
     }
     
     @IBAction func seven(_ sender: Any) {
-        display.text! += "7"
-        number += "7"
+        digitEntered(digit: "7")
     }
     
     @IBAction func eight(_ sender: Any) {
-        display.text! += "8"
-        number += "8"
+        digitEntered(digit: "8")
     }
     
     @IBAction func nine(_ sender: Any) {
-        display.text! += "9"
-        number += "9"
+        digitEntered(digit: "9")
     }
     
     @IBAction func eval(_ sender: Any) {
@@ -130,36 +148,35 @@ class ViewController: UIViewController {
     }
     
     @IBAction func enter(_ sender: Any) {
-        addToStack(number: number)
-        number = ""
+        addNumberToStack()
         display.text! += " "
+    }
+    
+    @IBAction func changeSign(_ sender: Any) {
+        
     }
     
     @IBAction func plus(_ sender: Any) {
         display.text! += " + "
-        addToStack(number: number)
-        number = ""
+        addNumberToStack()
         add()
     }
     
     @IBAction func minus(_ sender: Any) {
         display.text! += " - "
-        addToStack(number: number)
-        number = ""
+        addNumberToStack()
         subtract()
     }
     
     @IBAction func times(_ sender: Any) {
         display.text! += " * "
-        addToStack(number: number)
-        number = ""
+        addNumberToStack()
         multiply()
     }
     
     @IBAction func divide(_ sender: Any) {
         display.text! += " / "
-        addToStack(number: number)
-        number = ""
+        addNumberToStack()
         divide()
     }
     
