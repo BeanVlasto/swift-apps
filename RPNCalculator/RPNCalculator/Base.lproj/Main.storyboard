@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -24,36 +24,32 @@
                                     <action selector="one:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1GW-bn-Ucr"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E51-Ln-jKE">
-                                <rect key="frame" x="20" y="753" width="115" height="89"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E51-Ln-jKE">
+                                <rect key="frame" x="49" y="778" width="30" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <state key="normal" title="+"/>
                                 <connections>
                                     <action selector="plus:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yo2-7h-6LB"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tRQ-NA-e8r">
-                                <rect key="frame" x="104" y="753" width="115" height="89"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tRQ-NA-e8r">
+                                <rect key="frame" x="145" y="778" width="30" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <state key="normal" title="-"/>
                                 <connections>
                                     <action selector="minus:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cwI-AE-pRr"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ofs-UW-eAK">
-                                <rect key="frame" x="197" y="751" width="115" height="89"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ofs-UW-eAK">
+                                <rect key="frame" x="240" y="778" width="30" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <state key="normal" title="*"/>
                                 <connections>
                                     <action selector="times:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c8F-og-Vir"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QUW-0f-GUV">
-                                <rect key="frame" x="279" y="752" width="115" height="89"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QUW-0f-GUV">
+                                <rect key="frame" x="335" y="778" width="30" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <state key="normal" title="/"/>
                                 <connections>
@@ -85,15 +81,6 @@
                                 <state key="normal" title="Eval"/>
                                 <connections>
                                     <action selector="eval:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q4X-Vc-RnM"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HbV-os-TTQ">
-                                <rect key="frame" x="20" y="656" width="206" height="89"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <state key="normal" title="Enter"/>
-                                <connections>
-                                    <action selector="enter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pV4-x9-bXh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lv6-i8-Xst">
@@ -175,17 +162,41 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IP0-l8-hur">
-                                <rect key="frame" x="188" y="656" width="206" height="89"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IP0-l8-hur">
+                                <rect key="frame" x="263" y="645" width="37" height="89"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <state key="normal" title="+/-"/>
                                 <connections>
                                     <action selector="changeSign:" destination="BYZ-38-t0r" eventType="touchUpInside" id="86B-QG-BQL"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HbV-os-TTQ">
+                                <rect key="frame" x="103" y="645" width="59" height="89"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="Enter"/>
+                                <connections>
+                                    <action selector="enter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pV4-x9-bXh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Ofs-UW-eAK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tRQ-NA-e8r" secondAttribute="trailing" constant="20" id="5DI-I0-fqf"/>
+                            <constraint firstItem="QUW-0f-GUV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Ofs-UW-eAK" secondAttribute="trailing" constant="20" id="BE4-HQ-AUf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Ofs-UW-eAK" secondAttribute="bottom" constant="10" id="CoH-YR-ysE"/>
+                            <constraint firstItem="QUW-0f-GUV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Ofs-UW-eAK" secondAttribute="trailing" constant="20" id="DQH-Sc-s9V"/>
+                            <constraint firstItem="tRQ-NA-e8r" firstAttribute="top" relation="greaterThanOrEqual" secondItem="HbV-os-TTQ" secondAttribute="bottom" constant="10" id="Fyb-Wc-il5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="QUW-0f-GUV" secondAttribute="bottom" constant="10" id="GfM-XO-w1k"/>
+                            <constraint firstItem="tRQ-NA-e8r" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="E51-Ln-jKE" secondAttribute="trailing" constant="20" id="H69-a5-aUl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="QUW-0f-GUV" secondAttribute="trailing" constant="20" id="HB2-Er-Bzv"/>
+                            <constraint firstItem="HbV-os-TTQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="NNK-RN-rgf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="IP0-l8-hur" secondAttribute="trailing" constant="20" id="Obq-mp-c6v"/>
+                            <constraint firstItem="E51-Ln-jKE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="HbV-os-TTQ" secondAttribute="bottom" constant="10" id="Oey-jH-dBY"/>
+                            <constraint firstItem="Ofs-UW-eAK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tRQ-NA-e8r" secondAttribute="trailing" constant="20" id="Yie-gm-2u9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="E51-Ln-jKE" secondAttribute="bottom" constant="10" id="Z10-JO-398"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="tRQ-NA-e8r" secondAttribute="bottom" constant="10" id="nN4-Yh-De5"/>
+                            <constraint firstItem="E51-Ln-jKE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="wJI-rQ-2Rr"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
