@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet var display: UILabel!
     
     var input_num: Int? = nil
-    
+    var stored_output: String = ""
     let stack = Stack()
     
     override func viewDidLoad() {
@@ -21,10 +21,8 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    func addToStack(number: Int?) {
-        if number != nil {
-            stack.push(data: number!)
-        }
+    func addToStack(number: Int) {
+        stack.push(data: number)
     }
     
     func addNumberToStack() {
@@ -34,11 +32,20 @@ class ViewController: UIViewController {
         input_num = nil
     }
     
+    func invalidNumber(string: String) -> Bool {
+        var string = string
+        string.removeAll(where: { "-".contains($0) })
+        if string.count > 2 {
+            return true
+        }
+        return false
+    }
+    
     func digitEntered(digit: String) {
         if input_num == nil {
             input_num = Int(digit)
             display.text! += digit
-        } else if String(input_num!).count > 2 {
+        } else if invalidNumber(string: String(input_num!)) {
             invalidNumberAlert()
         } else {
             display.text! += digit
@@ -71,6 +78,12 @@ class ViewController: UIViewController {
         self.present(alert, animated: true)
     }
     
+    func zeroAlert() {
+        let alert = UIAlertController(title: "Ya done goofed", message: "Oop!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "I'm a clown", style: .default, handler: nil))
+        self.present(alert, animated: true)
+    }
+    
     func add() {
         if let num_array = returnNumbersForCalculation() {
             let result = num_array[0] + num_array[1]
@@ -94,8 +107,12 @@ class ViewController: UIViewController {
     
     func divide() {
         if let num_array = returnNumbersForCalculation() {
-            let result = num_array[0] / num_array[1]
-            stack.push(data: result)
+            if num_array[1] != 0 {
+                let result = num_array[0] / num_array[1]
+                stack.push(data: result)
+            } else {
+                zeroAlert()
+            }
         }
     }
     
@@ -149,6 +166,7 @@ class ViewController: UIViewController {
     
     @IBAction func clear(_ sender: Any?) {
         display.text! = ""
+        stored_output = ""
         stack.empty()
         input_num = nil
     }
@@ -156,11 +174,13 @@ class ViewController: UIViewController {
     @IBAction func enter(_ sender: Any) {
         addNumberToStack()
         display.text! += " "
+        stored_output = display.text!
     }
     
     @IBAction func changeSign(_ sender: Any) {
         if input_num != nil {
             input_num = -1 * input_num!
+            display.text! = stored_output + String(input_num!)
         }
     }
     
