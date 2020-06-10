@@ -12,7 +12,8 @@ class ViewController: UIViewController {
 
     @IBOutlet var display: UILabel!
     
-    var number: String = ""
+    var input_num: Int? = nil
+    
     let stack = Stack()
     
     override func viewDidLoad() {
@@ -20,23 +21,28 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    func addToStack(number: String) {
-        if number != "" {
-            stack.push(data: Int(number)!)
+    func addToStack(number: Int?) {
+        if number != nil {
+            stack.push(data: number!)
         }
     }
     
     func addNumberToStack() {
-        addToStack(number: number)
-        number = ""
+        if input_num != nil {
+            addToStack(number: input_num!)
+        }
+        input_num = nil
     }
     
     func digitEntered(digit: String) {
-        if number.count > 2 {
+        if input_num == nil {
+            input_num = Int(digit)
+            display.text! += digit
+        } else if String(input_num!).count > 2 {
             invalidNumberAlert()
         } else {
             display.text! += digit
-            number += digit
+            input_num = Int(String(input_num!) + digit)
         }
     }
     
@@ -144,7 +150,7 @@ class ViewController: UIViewController {
     @IBAction func clear(_ sender: Any?) {
         display.text! = ""
         stack.empty()
-        number = ""
+        input_num = nil
     }
     
     @IBAction func enter(_ sender: Any) {
@@ -153,7 +159,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func changeSign(_ sender: Any) {
-        
+        if input_num != nil {
+            input_num = -1 * input_num!
+        }
     }
     
     @IBAction func plus(_ sender: Any) {
@@ -181,4 +189,3 @@ class ViewController: UIViewController {
     }
     
 }
-
