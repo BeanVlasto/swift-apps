@@ -159,8 +159,8 @@ class ViewController: UIViewController {
     
     @IBAction func eval(_ sender: Any) {
         if stack.isEmpty() == false {
-            display.text! = String(stack.peek()!)
-            display.text! += " "
+            display.text! = String(stack.peek()!) + " "
+            stored_output = display.text!
         }
     }
     
