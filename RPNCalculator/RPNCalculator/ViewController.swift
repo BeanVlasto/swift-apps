@@ -20,14 +20,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-    func addToStack(number: Int) {
-        stack.push(data: number)
-    }
     
     func addNumberToStack() {
         if input_num != nil {
-            addToStack(number: input_num!)
+            stack.push(data: input_num!)
         }
         input_num = nil
     }
@@ -59,11 +55,22 @@ class ViewController: UIViewController {
             let num_1 = stack.pop()!
             return [num_1, num_2]
         } else {
-            invalidCalculationAlert()
-            let endOfString = display.text!.firstIndex(of: " ")!
-            display.text! = String(display.text![...endOfString])
+            invalidCalculation()
             return nil
         }
+    }
+    
+    func clear() {
+        display.text! = ""
+        stored_output = ""
+        stack.empty()
+        input_num = nil
+    }
+    
+    func invalidCalculation() {
+        invalidCalculationAlert()
+        let endOfString = display.text!.firstIndex(of: " ")!
+        display.text! = String(display.text![...endOfString])
     }
     
     func invalidCalculationAlert() {
@@ -80,6 +87,7 @@ class ViewController: UIViewController {
     
     func zeroAlert() {
         let alert = UIAlertController(title: "Ya done goofed", message: "Oop!", preferredStyle: .alert)
+        alert.isAccessibilityElement = true
         alert.addAction(UIAlertAction(title: "I'm a clown", style: .default, handler: nil))
         self.present(alert, animated: true)
     }
@@ -112,6 +120,7 @@ class ViewController: UIViewController {
                 stack.push(data: result)
             } else {
                 zeroAlert()
+                clear()
             }
         }
     }
@@ -164,11 +173,8 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func clear(_ sender: Any?) {
-        display.text! = ""
-        stored_output = ""
-        stack.empty()
-        input_num = nil
+    @IBAction func clearButton(_ sender: Any?) {
+        clear()
     }
     
     @IBAction func enter(_ sender: Any) {

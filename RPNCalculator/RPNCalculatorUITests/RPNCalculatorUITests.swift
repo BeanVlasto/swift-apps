@@ -9,6 +9,9 @@
 import XCTest
 
 class RPNCalculatorUITests: XCTestCase {
+    
+    let stack = Stack()
+    let viewController = ViewController()
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -23,21 +26,51 @@ class RPNCalculatorUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // UI tests must launch the application that they test.
+    func testNumberInputAndOperatorButtonsAndDisplayWork() {
+        // Arrange
         let app = XCUIApplication()
         app.launch()
+        
+        app.buttons["5"].tap()
+        app.buttons["Enter"].tap()
+        app.buttons["2"].tap()
+        app.buttons["+"].tap()
+        app.buttons["Eval"].tap()
+        
+        // Act
+        let expected = "7 "
+        let actual = app.staticTexts["display"].label
 
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        // Assert
+        XCTAssertEqual(expected, actual)
+        
+    }
+    
+    func testDividingByZeroClearsDisplay() {
+        // Arrange
+        let app = XCUIApplication()
+        app.launch()
+        
+        app.buttons["5"].tap()
+        app.buttons["Enter"].tap()
+        app.buttons["0"].tap()
+        app.buttons["/"].tap()
+        app.alerts["Ya done goofed"].scrollViews.otherElements.buttons["I'm a clown"].tap()
+        
+        // Act
+        let expected = ""
+        let actual = app.staticTexts["display"].label
+
+        // Assert
+        XCTAssertEqual(expected, actual)
+        
+    }
+    
+    func blah() {
+        let app = XCUIApplication()
+        app.launch()
+        
+        
     }
 
-    func testLaunchPerformance() {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTOSSignpostMetric.applicationLaunch]) {
-                XCUIApplication().launch()
-            }
-        }
-    }
 }
