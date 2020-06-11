@@ -26,7 +26,7 @@ class RPNCalculatorUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testNumberInputAndPlusAndEvalButtonsAndDisplayWork() {
+    func testNumberInputAndPlusAndEvalButtonsAndDisplayWorkWithNormalData() {
         
         // Arrange
         let app = XCUIApplication()
@@ -101,10 +101,42 @@ class RPNCalculatorUITests: XCTestCase {
         
     }
     
-    func testBlah() {
+    func testDivingByZeroCreatesAlert() {
+        
+        // Arrange
         let app = XCUIApplication()
         app.launch()
         
+        app.buttons["5"].tap()
+        app.buttons["Enter"].tap()
+        app.buttons["0"].tap()
+        app.buttons["/"].tap()
+        
+        // Act
+        // Assert
+        XCTAssertTrue(app.alerts["Ya done goofed"].exists)
+        
+    }
+    
+    func testClearButtonClearsDisplay() {
+        
+        // Arrange
+        let app = XCUIApplication()
+        app.launch()
+        
+        app.buttons["5"].tap()
+        app.buttons["Enter"].tap()
+        app.buttons["2"].tap()
+        app.buttons["*"].tap()
+        app.buttons["Eval"].tap()
+        app.buttons["CLR"].tap()
+        
+        // Act
+        let expected = ""
+        let actual = app.staticTexts["display"].label
+
+        // Assert
+        XCTAssertEqual(expected, actual)
         
     }
 

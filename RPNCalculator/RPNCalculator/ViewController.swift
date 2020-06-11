@@ -86,7 +86,6 @@ class ViewController: UIViewController {
     
     func zeroAlert() {
         let alert = UIAlertController(title: "Ya done goofed", message: "Oop!", preferredStyle: .alert)
-        alert.isAccessibilityElement = true
         alert.addAction(UIAlertAction(title: "I'm a clown", style: .default, handler: nil))
         self.present(alert, animated: true)
     }
