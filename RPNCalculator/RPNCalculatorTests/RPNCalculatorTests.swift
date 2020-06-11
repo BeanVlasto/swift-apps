@@ -65,7 +65,7 @@ class RPNCalculatorTests: XCTestCase {
         
         // Act
         let expected = false
-        let actual = viewController.invalidNumber(string: "1")
+        let actual = viewController.invalidNumberCheck(string: "1")
         
         // Assert
         XCTAssertEqual(actual, expected)
@@ -84,7 +84,7 @@ class RPNCalculatorTests: XCTestCase {
         XCTAssertEqual(actual, expected)
     }
     
-    func testReturnNumbersForCalculationReturnsTwoNumbers() {
+    func testReturnNumbersForCalculationReturnsNumbersWhenStackIsValid() {
         // Arrange
         viewController.stack.push(data: 23)
         viewController.stack.push(data: 32)
@@ -106,20 +106,6 @@ class RPNCalculatorTests: XCTestCase {
         // Act
         let expected = 17
         let actual = viewController.stack.peek()
-        
-        // Assert
-        XCTAssertEqual(actual, expected)
-    }
-    
-    func testDividingByZeroDoesNotAffectStack() {
-        // Arrange
-        viewController.stack.push(data: 20)
-        viewController.stack.push(data: 0)
-        viewController.divide()
-        
-        // Act
-        let expected = [20, 0]
-        let actual = viewController.stack.array
         
         // Assert
         XCTAssertEqual(actual, expected)

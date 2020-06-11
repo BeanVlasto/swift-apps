@@ -21,6 +21,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    // Adds number to the stack and resets number that user is inputting
     func addNumberToStack() {
         if input_num != nil {
             stack.push(data: input_num!)
@@ -28,7 +29,8 @@ class ViewController: UIViewController {
         input_num = nil
     }
     
-    func invalidNumber(string: String) -> Bool {
+    // Called each time digit is entered. If number is too long, returns true, if it's ok returns false
+    func invalidNumberCheck(string: String) -> Bool {
         var string = string
         string.removeAll(where: { "-".contains($0) })
         if string.count > 2 {
@@ -37,11 +39,12 @@ class ViewController: UIViewController {
         return false
     }
     
+    // Called every time digit is entered. If number being entered is too long, shows alert. If it's ok, adds number
     func digitEntered(digit: String) {
         if input_num == nil {
             input_num = Int(digit)
             display.text! += digit
-        } else if invalidNumber(string: String(input_num!)) {
+        } else if invalidNumberCheck(string: String(input_num!)) {
             invalidNumberAlert()
         } else {
             display.text! += digit
@@ -49,6 +52,7 @@ class ViewController: UIViewController {
         }
     }
     
+    // Checks if stack has two numbers for a calculation. If yes, return them, if not, call "invalidCalculation"
     func returnNumbersForCalculation() -> [Int]? {
         if stack.array.count > 1 {
             let num_2 = stack.pop()! // When subtracting (or dividing), the first thing to be popped should be subtracted from the second, hence "num_2" is popped first.
@@ -60,19 +64,14 @@ class ViewController: UIViewController {
         }
     }
     
-    func clear() {
-        display.text! = ""
-        stored_output = ""
-        stack.empty()
-        input_num = nil
-    }
-    
+    // Displays alert to user that calculation is invalid and removes the operator entered from the display
     func invalidCalculation() {
         invalidCalculationAlert()
         let endOfString = display.text!.firstIndex(of: " ")!
         display.text! = String(display.text![...endOfString])
     }
     
+    // Alerts for different errors
     func invalidCalculationAlert() {
         let alert = UIAlertController(title: "Invalid calculation", message: "Two numbers are required per operation", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Close", style: .default, handler: nil))
@@ -92,40 +91,7 @@ class ViewController: UIViewController {
         self.present(alert, animated: true)
     }
     
-    func add() {
-        if let num_array = returnNumbersForCalculation() {
-            let result = num_array[0] + num_array[1]
-            stack.push(data: result)
-        }
-    }
-    
-    func subtract() {
-        if let num_array = returnNumbersForCalculation() {
-            let result = num_array[0] - num_array[1]
-            stack.push(data: result)
-        }
-    }
-    
-    func multiply() {
-        if let num_array = returnNumbersForCalculation() {
-            let result = num_array[0] * num_array[1]
-            stack.push(data: result)
-        }
-    }
-    
-    func divide() {
-        if let num_array = returnNumbersForCalculation() {
-            if num_array[1] != 0 {
-                let result = num_array[0] / num_array[1]
-                stack.push(data: result)
-            } else {
-                zeroAlert()
-                clear()
-            }
-        }
-    }
-    
-    
+    // Buttons to take user input
     @IBAction func zero(_ sender: Any) {
         digitEntered(digit: "0")
     }
@@ -166,6 +132,7 @@ class ViewController: UIViewController {
         digitEntered(digit: "9")
     }
     
+    // If stack contains at least one number, display top of stack
     @IBAction func eval(_ sender: Any) {
         if stack.isEmpty() == false {
             display.text! = String(stack.peek()!) + " "
@@ -177,6 +144,14 @@ class ViewController: UIViewController {
         clear()
     }
     
+    func clear() {
+        display.text! = ""
+        stored_output = ""
+        stack.empty()
+        input_num = nil
+    }
+    
+    // Adds current number to stack and resets number user is inputting
     @IBAction func enter(_ sender: Any) {
         addNumberToStack()
         display.text! += " "
@@ -193,25 +168,58 @@ class ViewController: UIViewController {
     @IBAction func plus(_ sender: Any) {
         display.text! += " + "
         addNumberToStack()
-        add()
+        plus()
+    }
+    
+    func plus() {
+        if let num_array = returnNumbersForCalculation() {
+            let result = num_array[0] + num_array[1]
+            stack.push(data: result)
+        }
     }
     
     @IBAction func minus(_ sender: Any) {
         display.text! += " - "
         addNumberToStack()
-        subtract()
+        minus()
+    }
+    
+    func minus() {
+        if let num_array = returnNumbersForCalculation() {
+            let result = num_array[0] - num_array[1]
+            stack.push(data: result)
+        }
     }
     
     @IBAction func times(_ sender: Any) {
         display.text! += " * "
         addNumberToStack()
-        multiply()
+        times()
+    }
+    
+    func times() {
+        if let num_array = returnNumbersForCalculation() {
+            let result = num_array[0] * num_array[1]
+            stack.push(data: result)
+        }
     }
     
     @IBAction func divide(_ sender: Any) {
         display.text! += " / "
         addNumberToStack()
         divide()
+    }
+    
+    func divide() {
+        if let num_array = returnNumbersForCalculation() {
+            if num_array[1] != 0 {
+                let result = num_array[0] / num_array[1]
+                stack.push(data: result)
+            } else {
+                zeroAlert()
+                clear()
+            }
+        }
     }
     
 }
