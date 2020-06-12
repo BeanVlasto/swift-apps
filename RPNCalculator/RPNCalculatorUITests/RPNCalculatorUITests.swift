@@ -139,5 +139,39 @@ class RPNCalculatorUITests: XCTestCase {
         XCTAssertEqual(expected, actual)
         
     }
+    
+    func testAllButtonsAreCorrectlyLinkedToViewController() {
+        // Arrange
+        let app = XCUIApplication()
+        app.launch()
+        
+        app.buttons["0"].tap()
+        app.buttons["1"].tap()
+        
+        let button = app.buttons["2"]
+        button.tap()
+        app.buttons["Enter"].tap()
+        button.tap()
+        app.buttons["3"].tap()
+        app.buttons["4"].tap()
+        
+        let button2 = app.buttons["+"]
+        button2.tap()
+        app.buttons["5"].tap()
+        app.buttons["6"].tap()
+        app.buttons["7"].tap()
+        button2.tap()
+        app.buttons["8"].tap()
+        app.buttons["9"].tap()
+        app.buttons["Eval"].tap()
+        
+        // Act
+        let expected = "813 "
+        let actual = app.staticTexts["display"].label
+
+        // Assert
+        XCTAssertEqual(expected, actual)
+        
+    }
 
 }
